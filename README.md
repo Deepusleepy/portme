@@ -193,8 +193,10 @@ self-contained readable-source API/config port. Large-scale mode was a
 user-requested override on a genuinely tiny fixture. It retains the original
 orchestrator's honest serial-degrade history, followed by a parent addendum with
 real overlapping U-CONFIG/U-EXEC workers, disjoint paths, exit-126 guardrail
-receipts, serialized-referee contention, immutable integration failure `0003`
-and fixed success `0004`, queue 4/4, full suite 35/35, and judge 43/43. The
+receipts, serialized-referee contention, historically immutable integration
+failure `0003` and fixed success `0004`, queue 4/4, full suite 35/35, and judge
+43/43. Because Git normalizes read-only modes, the packaged verifier reconstructs
+`0444`/`0555` in a disposable copy before cryptographic verification. The
 guardrail is a harness stand-in for deny firing and referee routing, not Claude
 settings or a security/isolation boundary.
 

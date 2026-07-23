@@ -11,10 +11,44 @@ cleanup() {
 }
 trap cleanup EXIT HUP INT TERM
 
+echo "== validate historical referee evidence transport =="
+python3 - "$ROOT" <<'PY'
+from pathlib import Path
+import stat
+import sys
+
+root = Path(sys.argv[1]) / ".port/referee"
+expected_files = {"COMPLETE", "cmd.txt", "exit.txt", "metadata.json", "output.txt"}
+for name in ("0001", "0002", "0003", "0004"):
+    directory = root / name
+    info = directory.lstat()
+    if stat.S_ISLNK(info.st_mode) or not stat.S_ISDIR(info.st_mode):
+        raise SystemExit("invalid historical result directory: %s" % directory)
+    if stat.S_IMODE(info.st_mode) not in (0o555, 0o755):
+        raise SystemExit("unexpected transported directory mode: %s" % directory)
+    entries = {entry.name for entry in directory.iterdir()}
+    if entries != expected_files:
+        raise SystemExit("unexpected historical result file set: %s" % directory)
+    for entry in directory.iterdir():
+        entry_info = entry.lstat()
+        if stat.S_ISLNK(entry_info.st_mode) or not stat.S_ISREG(entry_info.st_mode):
+            raise SystemExit("invalid historical result file: %s" % entry)
+        if stat.S_IMODE(entry_info.st_mode) not in (0o444, 0o644):
+            raise SystemExit("unexpected transported file mode: %s" % entry)
+print("ok: source uses only original 0444/0555 or Git-normalized 0644/0755 modes")
+PY
+
 mkdir "$CASE"
 cp -R "$ROOT/." "$CASE/"
 cd "$CASE"
 export PYTHONDONTWRITEBYTECODE=1
+
+echo "== reconstruct historical referee evidence modes in disposable copy =="
+for directory in .port/referee/0001 .port/referee/0002 .port/referee/0003 .port/referee/0004; do
+  chmod 0444 "$directory"/*
+  chmod 0555 "$directory"
+done
+echo "ok: reconstructed 0444 files and 0555 directories"
 
 BUNDLE_PIN=37280d4e00533ecedff4c5a89c76c3622176f53bc0e22652e30bfd62d7ae9589
 SOURCE_PIN=bb35f057aeefb98ef12a0d2e8fcb03fc03c009eaf59f71e7b3a9a59701af7457

@@ -15,12 +15,17 @@ small.
 ```
 
 `verify.sh` first makes a disposable clean copy, so the published example is not
-mutated. In that copy it verifies the pinned current authorization bundle, runs
-the authorized queue (4/4), all 35 unittests, the 43/43 differential judge
-against the bundled source, a newly serialized full referee, and cryptographic
-`last` verification. It also checks the three deny receipts, worker receipts and
-overlapping timestamps, disjoint ownership, reviewer summaries, and immutable
-historical referee failure `0003` followed by success `0004`.
+mutated. Git stores only executable versus non-executable file modes and does not
+preserve the historical results' original `0444` files and `0555` directories.
+The verifier therefore accepts only those original modes or Git's normalized
+`0644`/`0755` checkout modes, reconstructs the read-only modes in the disposable
+copy, and then performs the full cryptographic result verification. It verifies
+the pinned current authorization bundle, runs the authorized queue (4/4), all 35
+unittests, the 43/43 differential judge against the bundled source, a newly
+serialized full referee, and cryptographic `last` verification. It also checks
+the three deny receipts, worker receipts and overlapping timestamps, disjoint
+ownership, reviewer summaries, and the historically immutable referee failure
+`0003` followed by success `0004`.
 
 ## Honest run history
 
