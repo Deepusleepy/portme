@@ -1,0 +1,12 @@
+{
+  "scenario_id": "J-014",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 400,
+      "body": {
+        "error": "ValueError"
+      }
+    }
+  ]
+}

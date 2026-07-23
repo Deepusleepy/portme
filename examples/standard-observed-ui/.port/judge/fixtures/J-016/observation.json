@@ -1,0 +1,13 @@
+{
+  "scenario_id": "J-016",
+  "observations": [
+    {
+      "kind": "health",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "version": "ui-observed-1"
+      }
+    }
+  ]
+}

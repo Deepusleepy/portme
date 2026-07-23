@@ -1,0 +1,74 @@
+{
+  "scenario_id": "J-009",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Themed done",
+              "checked": false,
+              "text": "Themed"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Themed\n",
+        "focus": "new-item",
+        "liveRegion": "Added Themed"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Themed done",
+              "checked": false,
+              "text": "Themed"
+            }
+          ],
+          "theme": "dark",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Themed\n",
+        "focus": "new-item",
+        "liveRegion": "Dark theme"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Themed done",
+              "checked": false,
+              "text": "Themed"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Themed\n",
+        "focus": "new-item",
+        "liveRegion": "Light theme"
+      }
+    }
+  ]
+}

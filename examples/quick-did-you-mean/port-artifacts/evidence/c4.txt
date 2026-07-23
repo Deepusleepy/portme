@@ -1,0 +1,7 @@
+===== C4: valid commands =====
+add exit=0
+list exit=0
+list output:
+1. hello world
+search exit=0
+1. hello world

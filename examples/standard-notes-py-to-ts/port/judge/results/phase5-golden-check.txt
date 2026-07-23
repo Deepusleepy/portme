@@ -1,0 +1,19 @@
+Phase 5 golden-check (drift check) — fresh source capture vs FROZEN golden/ — 2026-07-22
+Purpose: confirm the pinned source has not drifted from the Phase 0 frozen baseline.
+Tools: Python 3.14.6 source oracle; compare vs .port/judge/golden/ (frozen at Phase 0).
+------------------------------------------------------------------
+PASS c1_add
+PASS c2_list
+PASS c3_search
+PASS c4_remove_ok
+PASS c5_remove_oob
+PASS c6_remove_nonint
+PASS c7_help
+PASS c8_dym_singular
+PASS c9_dym_plural
+PASS c10_dym_none
+PASS c11_missing_req
+PASS c12_unrecognized
+PASS c13_fileformat
+PASS c13b_defaultpath
+== 14/14 scenarios: fresh source == frozen golden (0 drift = source unchanged since Phase 0) ==

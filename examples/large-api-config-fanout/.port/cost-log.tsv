@@ -1,0 +1,9 @@
+gate	mode	units	size_band	calendar_range	low_tokens	high_tokens	actual_tokens	actual_cost	elapsed_minutes	model_plan	notes
+sizing	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	user-requested Large-scale override on a small fixture; recorded honestly
+phase-0	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	judge 43 scenarios; 5 mutations caught (1/comparator class); source unchanged
+phase-1	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	bundle digest 7fa1c825; contract-manifest join clean; 5 gaps closed; 9 rules
+phase-2	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	stress slice U-CONFIG kept-in-place (slice is large share of small port); 0 rule amendments
+phase-3	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	original serial run: 4/4 units done; 2 review passes/high-risk unit; 0 confirmed behavioral findings
+phase-4	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	serialized referee: 2 results, lock contention proven, last verified; deny receipts x3
+phase-5	Large-scale	4	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	smoke ok; judge 43/43; 0 introduced; 0 inherited; 0 markers
+parent-fanout-addendum	Large-scale	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	real overlapping U-CONFIG/U-EXEC workers; 1 confirmed process finding; referee 0003 failed then 0004 passed; queue 4/4; judge 43/43

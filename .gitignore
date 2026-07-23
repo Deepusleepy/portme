@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+/research/
+/DESIGN-BRIEF.md
+/.portme-private/
+
+# Do not add broad node_modules/ or dist/ rules here: depmap exclusion tests
+# intentionally ship tiny fixtures under those directory names.

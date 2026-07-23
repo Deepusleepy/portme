@@ -1,0 +1,16 @@
+Adversarial edge probes (Phase 3 review) — source oracle vs port, captured 2026-07-22T17:11:49Z
+== unicode digit remove (D-002 divergence) ==
+-- source --
+error: no note number 3
+exit=1
+-- port --
+usage: notes remove [-h] number
+notes remove: error: argument number: invalid int value: '٣'
+exit=2
+== huge int remove (F-2, FIXED) ==
+-- source --
+error: no note number 9999999999999999999999
+exit=1
+-- port --
+error: no note number 9999999999999999999999
+exit=1

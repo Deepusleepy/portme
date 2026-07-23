@@ -1,0 +1,6 @@
+===== C2: notes addlis =====
+exit=2
+--- stderr ---
+usage: notes [-h] command ...
+notes: error: argument command: invalid choice: 'addlis' (choose from 'add', 'list', 'search', 'remove'). (Did you mean one of: 'add', 'list'?)
+--- stdout ---

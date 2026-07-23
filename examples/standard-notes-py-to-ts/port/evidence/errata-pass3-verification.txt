@@ -1,0 +1,57 @@
+Errata pass 3 verification receipt — 2026-07-23
+Command: ./verify.sh (from a clean disposable /tmp copy created by the script)
+Environment: macOS arm64; Python 3.14.6; Node v24.18.0; npm 11.18.0
+
+PASS shipped Python source SHA-256: 4/4 files
+PASS deterministic install: npm ci, 3 packages, 0 runtime dependencies
+PASS TypeScript build
+PASS judge pass direction: source == source, 15/15 scenarios
+PASS judge fail direction: stdout/stderr/exit/file mutations caught, 4/4
+PASS fresh source vs port differential: 15/15 scenarios
+PASS shipped source vs frozen goldens: 15/15, 0 drift
+PASS differential stress: 70/70, 0 mismatches
+PASS unsafe capture/compare labels: ../traversal-sentinel rejected with exit 64; sentinel retained
+PASS ESM direct entry: logical /tmp path, physical /private/tmp path, and explicit symlink component
+PASS pass-3 manifest-pinned queue: verified 5/5 units, 0 failed-check
+PASS cleanup: no node_modules/ or dist/ left in the published example
+
+Historical pass-3 manifest SHA-256 (before the final doctrine reconciliation):
+7b6044cfde9131d675bf1169143a29e9c4e71c08bf9c6cbbbf86829fa136fc6b
+
+Historical pass-3 publication manifest-only SHA-256, rechecked 2026-07-23:
+27e6e3ffc2c5c35dffc15854c9cdda83f32d5216f60dbd53b044bdb56a56e70a
+Under the pass-3 runner, this pin proved exact manifest bytes only. It was not
+approval and did not replace a live Portme run's user-approved Phase-1
+authorization. Errata pass 4 supersedes it with a manifest/check-input bundle.
+
+package-lock.json SHA-256:
+ff01081cbd57fb1fd5eb9721af60c500704dd9aae56fb50fd56b2fcd1c914c90
+
+Development-run honesty: the first clean-copy attempt exposed that the initial
+TypeScript 7 lock omitted its native platform package; dependencies were then
+pinned to the portable TypeScript 6.0.3 compiler and the lock was corrected.
+The next attempt reached the ESM probes and exposed a set -u local-initializer
+bug in verify.sh; that was fixed. The complete run summarized above is the
+subsequent passing run. No failed-run output was substituted for this receipt.
+
+Final documentation/consistency recheck — 2026-07-23
+Command: ./verify.sh (the script created and cleaned its disposable /tmp copy)
+Environment: macOS arm64; Python 3.14.6; Node v24.18.0; npm 11.18.0;
+GNU bash 3.2.57.
+
+PASS then-current pass-3 publication pin matched manifest bytes before queue execution
+PASS shipped Python source SHA-256: 4/4 files
+PASS contract/manifest/scenario join and integrity checks
+PASS deterministic npm ci and TypeScript build
+PASS judge pass direction: 15/15; mutation classes caught: 4/4
+PASS fresh source-vs-port differential: 15/15; golden drift: 15/15
+PASS differential stress: 70/70
+PASS capture/compare traversal labels and all three ESM entry path probes
+PASS pass-3 manifest-pinned queue: 5/5 units, 0 failed-check
+PASS cleanup: no generated node_modules/, dist/, bytecode, or __pycache__ in the example
+
+This historical pass-3 manifest-only pin was publication integrity for the
+explicitly invoked demo only. It was not approval. Errata pass 4 records the
+current bundle pin; an actual Portme run requires the bundle digest, exact
+commands, and check-input declarations approved by the user in conversation or
+trusted provenance.

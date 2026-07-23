@@ -1,0 +1,10 @@
+# Mutation sensitivity — 6 classes
+source file sha256 before=7b716d98875903871b7eacf3e2ae3c79af712230924b7410654f8feec2637aef after=7b716d98875903871b7eacf3e2ae3c79af712230924b7410654f8feec2637aef unchanged=True
+M1 changed-value      disposable=REDACTED-LOCAL-FIXTURE/mut-M1-6s0w_unw caught=YES
+M2 removed-item       disposable=REDACTED-LOCAL-FIXTURE/mut-M2-8_mklsy_ caught=YES
+M3 error-semantics    disposable=REDACTED-LOCAL-FIXTURE/mut-M3-t__llfaz caught=YES
+M4 broken-focus       disposable=REDACTED-LOCAL-FIXTURE/mut-M4-3kskfuwe caught=YES
+M5 broken-aria        disposable=REDACTED-LOCAL-FIXTURE/mut-M5-mcdj3vk1 caught=YES
+M6 suppressed-effect  disposable=REDACTED-LOCAL-FIXTURE/mut-M6-q9sh26u4 caught=YES
+
+all_caught=True (6/6)

@@ -1,0 +1,3 @@
+# Template defined by references/mapping.md; replace every <placeholder> and remove this comment when parsing.
+unit_id	source_scope	target_paths	depends_on	contract_ids	rule_ids	gap_ids	check_inputs	unit_check	risk
+U-001	<source scope>	<explicit exclusive files or bounded globs; avoid directories>	<IDs or blank; declare integration dependency for changed signature/adapter boundary>	<S-IDs>	<R-IDs>	<G-IDs>	<repository-relative check-control files or safe globs>	<exact authorized public-entry or actual-consumer check with negative probe>	<low/medium/high>

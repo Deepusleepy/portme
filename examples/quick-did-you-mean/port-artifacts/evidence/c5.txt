@@ -1,0 +1,17 @@
+===== C5 negative/mutation probe =====
+-- Mutation A (no suggestions): notes lst --
+exit=2
+usage: notes [-h] command ...
+notes: error: argument command: invalid choice: 'lst' (choose from 'add', 'list', 'search', 'remove')
+RESULT: C1 correctly FAILS (no suggestion) — judge rejects broken output
+-- Mutation B (wrong suggestion): notes lst --
+exit=2
+usage: notes [-h] command ...
+notes: error: argument command: invalid choice: 'lst' (choose from 'add', 'list', 'search', 'remove'). Did you mean 'remove'?
+RESULT: C1 correctly FAILS (suggests 'remove', not 'list') — judge rejects wrong output
+-- Restored: notes lst --
+exit=2
+usage: notes [-h] command ...
+notes: error: argument command: invalid choice: 'lst' (choose from 'add', 'list', 'search', 'remove'). Did you mean 'list'?
+RESULT: RESTORED GREEN
+file identical to pre-mutation

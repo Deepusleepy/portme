@@ -1,0 +1,38 @@
+{
+  "//": "Accidental-invocation guardrail only, not a security boundary. See references/execution-trust.md. With user approval, copy only relevant deny classes into the target repo's .claude/settings.json. Cover direct commands, wrappers, aliases, task runners, absolute paths, and alternate invocations found in Phase 2; preflight each class and keep receipts. Use separate credentials/container/process policy for hostile code or genuine isolation.",
+  "permissions": {
+    "deny": [
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(git merge:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(git restore:*)",
+      "Bash(git clean:*)",
+      "Bash(git stash:*)",
+      "Bash(cargo build:*)",
+      "Bash(cargo test:*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo run:*)",
+      "Bash(npm test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pytest:*)",
+      "Bash(go build:*)",
+      "Bash(go test:*)",
+      "Bash(make:*)",
+      "Bash(cmake:*)",
+      "Bash(docker build:*)",
+      "Bash(terraform apply:*)"
+    ],
+    "allow": [
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}

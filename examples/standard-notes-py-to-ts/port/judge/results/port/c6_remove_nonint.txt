@@ -1,0 +1,7 @@
+$ notes remove abc
+exit=2
+--stdout--
+--stderr--
+usage: notes remove [-h] number
+notes remove: error: argument number: invalid int value: 'abc'
+--end--

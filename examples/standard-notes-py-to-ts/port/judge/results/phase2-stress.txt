@@ -1,0 +1,77 @@
+### R-014 negative numbers & sign/underscore int parsing (R-010) ###
+OK    remove -1
+OK    remove -5
+OK    remove -0
+OK    remove -1.5
+OK    remove +2
+OK    remove 007
+OK    remove 1_0
+OK    remove 1__0
+OK    remove 5_
+OK    remove _5
+OK    remove 0x10
+OK    remove 1.0
+OK    remove empty
+OK    remove 3abc
+OK    remove sp 3 sp
+OK    search -1 (neg as term)
+OK    add -5 (neg as text)
+### R-003 prog routing / help paths / unrecognized ###
+OK    top -h before sub
+OK    sub add -h
+OK    sub list --help
+OK    sub search -h
+OK    remove -h with extra
+OK    add missing
+OK    search missing
+OK    remove missing
+OK    add extra a b c
+OK    list extra
+OK    remove 1 2 3
+OK    unknown --bad
+OK    unknown -x
+OK    add --bad
+OK    list --bad
+OK    double dash then sub
+OK    double dash then bad
+OK    sub add dashdash neg
+### R-005/R-006 did-you-mean variants ###
+OK    ad
+OK    lis
+OK    sea
+OK    rmv
+OK    remov
+OK    remove
+OK    l
+OK    searchx
+OK    adds
+OK    ADD upper
+OK    listt
+OK    aad
+OK    serch
+### R-003/argparse '--' separator quirk ###
+OK    bare --
+OK    -- --
+OK    -- add hello
+OK    -- lst
+OK    list --
+OK    list -- extra
+OK    add --
+OK    add -- hello
+OK    add -- --
+OK    remove --
+OK    remove -- 1
+OK    search -- foo
+OK    add a -- b
+OK    remove 1 -- 2
+### misc surfaces ###
+OK    no args
+OK    just --
+OK    add empty
+OK    search empty
+OK    search no-match
+OK    add then dup num
+OK    remove huge
+OK    remove top count
+
+===== STRESS SUMMARY: 70/70 probes match, 0 mismatches =====

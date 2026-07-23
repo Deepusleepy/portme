@@ -1,0 +1,4 @@
+diff: 42/43 scenarios matched
+  MISMATCH J-31-run-500-upstream
+    source: {'stdout': '{"attempts":1,"error":"upstream","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":500}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":3,"error":"upstream","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":500}\n', 'stderr': '', 'exit': 0}

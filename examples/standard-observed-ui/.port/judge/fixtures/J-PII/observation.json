@@ -1,0 +1,28 @@
+{
+  "scenario_id": "J-PII",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark ping me at [REDACTED:email] key=[REDACTED:aws-key] done",
+              "checked": false,
+              "text": "ping me at [REDACTED:email] key=[REDACTED:aws-key]"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] ping me at [REDACTED:email] key=[REDACTED:aws-key]\n",
+        "focus": "new-item",
+        "liveRegion": "Added ping me at [REDACTED:email] key=[REDACTED:aws-key]"
+      }
+    }
+  ]
+}

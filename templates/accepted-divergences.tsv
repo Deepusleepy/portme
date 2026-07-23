@@ -1,0 +1,3 @@
+# Template defined by references/contract.md; replace every <placeholder> and remove this comment when parsing.
+id	surface	source_behavior	port_behavior	reason	approved_by	approved_at	final_signoff
+D-001	S-001	<one bounded source behavior>	<one bounded port behavior>	<reason>	<user message>	<date>	pending

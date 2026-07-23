@@ -1,0 +1,120 @@
+{
+  "scenario_id": "J-008",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Solo done",
+              "checked": false,
+              "text": "Solo"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Solo\n",
+        "focus": "new-item",
+        "liveRegion": "Added Solo"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Solo done",
+              "checked": false,
+              "text": "Solo"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Solo\n",
+        "focus": "new-item",
+        "liveRegion": "Task not found"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Solo done",
+              "checked": false,
+              "text": "Solo"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Solo\n",
+        "focus": "new-item",
+        "liveRegion": "Task not found"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Solo done",
+              "checked": false,
+              "text": "Solo"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Solo\n",
+        "focus": "new-item",
+        "liveRegion": "Task not found"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Solo done",
+              "checked": false,
+              "text": "Solo"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Solo\n",
+        "focus": "new-item",
+        "liveRegion": "Task not found"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Template defined by references/mapping.md; replace every <placeholder> and remove this comment when parsing.
+gap_id	unit_id	source_site	category	observation	decision_needed	resolution	evidence	decision_owner	risk	status
+G-001	U-001	<source path/observation>	<category>	<source behavior>	<target decision>	<the decided target translation; required to close>	<paths/IDs backing the resolution>	<user/rule R-ID>	<low/medium/high>	open

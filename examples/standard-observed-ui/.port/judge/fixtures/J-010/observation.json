@@ -1,0 +1,97 @@
+{
+  "scenario_id": "J-010",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark E done",
+              "checked": false,
+              "text": "E"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] E\n",
+        "focus": "new-item",
+        "liveRegion": "Added E"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark E done",
+              "checked": false,
+              "text": "E"
+            }
+          ],
+          "theme": "dark",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] E\n",
+        "focus": "new-item",
+        "liveRegion": "Dark theme"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "active",
+          "rows": [
+            {
+              "ariaLabel": "Mark E done",
+              "checked": false,
+              "text": "E"
+            }
+          ],
+          "theme": "dark",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] E\n",
+        "focus": "filter-active",
+        "liveRegion": "Showing active tasks"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark E done",
+              "checked": false,
+              "text": "E"
+            }
+          ],
+          "theme": "dark",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] E\n",
+        "focus": "new-item",
+        "liveRegion": "Reset view"
+      }
+    }
+  ]
+}

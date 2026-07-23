@@ -1,0 +1,10 @@
+diff: 40/43 scenarios matched
+  MISMATCH J-28-run-503-default
+    source: {'stdout': '{"attempts":3,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":4,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-33-run-503-retries0
+    source: {'stdout': '{"attempts":1,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":1,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":2,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":1,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-36-run-503-retries4
+    source: {'stdout': '{"attempts":5,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":5,"region":"us-east","timeoutMs":500},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":6,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":5,"region":"us-east","timeoutMs":500},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}

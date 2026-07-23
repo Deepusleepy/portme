@@ -1,0 +1,2 @@
+DENIED: workers must route full_referee.sh through serialized referee_runner.py
+exit=126

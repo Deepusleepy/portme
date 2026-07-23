@@ -1,0 +1,14 @@
+entry_point	validation	rules	state	side_effects	visible_result	surface_id	scenario_ids	confidence
+POST /interact {type:reset}	action is dict	clear session	tasks=[],filter=all,theme=light	none	dom empty view; focus new-item; live ""	S-001	J-001	observed
+POST /interact {type:add,text}	text=strip(text or "")	empty→reject; else append	tasks+={text,done:false}	export/count grow	live "Added X"/"Task cannot be empty"; focus new-item	S-001	J-002,J-003	observed
+POST /interact {type:toggle,index}	index=int(get index,-1); range 0..len	flip done	task.done=not done	export/count/aria flip	live "X completed"/"X active"; focus task-N; oob→"Task not found" keep focus	S-002	J-004,J-007,J-008	observed
+POST /interact {type:delete,index}	index=int(get index,-1); range	pop	tasks-=1	export/count shrink	live "Deleted X"; focus task-N; oob→"Task not found" keep focus	S-003	J-005,J-008	observed
+POST /interact {type:filter,value}	value in {all,active,done}	set filter	filter=value	rows view changes	valid→focus filter-V,live "Showing V tasks"; invalid→live "" no change; empty view→"No tasks here"	S-004	J-006,J-007,J-013	observed
+POST /interact {type:shortcut,key}	key in {Alt+D,Escape}	Alt+D theme toggle; Escape reset view	theme flip / filter=all,focus new-item	theme or filter change	Alt+D live "Dark/Light theme" keep focus; Escape live "Reset view"; unknown live "" no change	S-005	J-009,J-010,J-011	observed
+POST /interact export field	—	render all tasks	unchanged	none	export "[ ]/[x] text\n" for ALL tasks regardless of filter	S-006	J-013	observed
+POST /interact unknown/missing type	action.get(type) unrecognized	no-op	unchanged	none	live "Unknown action" keep focus; 200	S-007	J-012	observed
+POST /interact non-int index	int(index) raises ValueError	propagate	unchanged	none	400 {"error":"ValueError"}	S-008	J-014	observed
+POST /interact non-dict action / bad JSON	.get on non-dict → AttributeError; json.loads fail → JSONDecodeError	propagate	unchanged	none	400 {"error":"AttributeError"/"JSONDecodeError"}	S-008	J-015	observed
+GET /health	—	—	none	none	200 {ok:true,version:...}	S-000	J-016	observed
+GET unknown / GET /interact	path routing	—	none	none	404	S-009	(routing probe)	observed
+session key absent	body.get(session)=None	default bucket	shared None session	none	normal envelope	S-001	J-016b(design)	observed

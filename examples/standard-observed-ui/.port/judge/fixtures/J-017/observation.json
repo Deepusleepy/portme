@@ -1,0 +1,160 @@
+{
+  "scenario_id": "J-017",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a b c done",
+              "checked": false,
+              "text": "a b c"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a b c\n",
+        "focus": "new-item",
+        "liveRegion": "Added a b c"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a b c done",
+              "checked": false,
+              "text": "a b c"
+            },
+            {
+              "ariaLabel": "Mark None done",
+              "checked": false,
+              "text": "None"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a b c\n[ ] None\n",
+        "focus": "new-item",
+        "liveRegion": "Added None"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 3,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a b c done",
+              "checked": false,
+              "text": "a b c"
+            },
+            {
+              "ariaLabel": "Mark None done",
+              "checked": false,
+              "text": "None"
+            },
+            {
+              "ariaLabel": "Mark 12345 done",
+              "checked": false,
+              "text": "12345"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a b c\n[ ] None\n[ ] 12345\n",
+        "focus": "new-item",
+        "liveRegion": "Added 12345"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 3,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a b c done",
+              "checked": false,
+              "text": "a b c"
+            },
+            {
+              "ariaLabel": "Mark None done",
+              "checked": false,
+              "text": "None"
+            },
+            {
+              "ariaLabel": "Mark 12345 done",
+              "checked": false,
+              "text": "12345"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a b c\n[ ] None\n[ ] 12345\n",
+        "focus": "new-item",
+        "liveRegion": "Task cannot be empty"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 4,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a b c done",
+              "checked": false,
+              "text": "a b c"
+            },
+            {
+              "ariaLabel": "Mark None done",
+              "checked": false,
+              "text": "None"
+            },
+            {
+              "ariaLabel": "Mark 12345 done",
+              "checked": false,
+              "text": "12345"
+            },
+            {
+              "ariaLabel": "Mark caf\u00e9 \u2713 \u4f60\u597d done",
+              "checked": false,
+              "text": "caf\u00e9 \u2713 \u4f60\u597d"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a b c\n[ ] None\n[ ] 12345\n[ ] caf\u00e9 \u2713 \u4f60\u597d\n",
+        "focus": "new-item",
+        "liveRegion": "Added caf\u00e9 \u2713 \u4f60\u597d"
+      }
+    }
+  ]
+}

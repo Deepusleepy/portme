@@ -1,0 +1,36 @@
+### Freeze source golden + self-consistency (pass direction) ###
+captured source → REDACTED-SANDBOX/target-ts/.port/judge/results/source (14 scenarios)
+captured source2 → REDACTED-SANDBOX/target-ts/.port/judge/results/source2 (14 scenarios)
+--- source vs source2 (must be all PASS) ---
+PASS c1_add
+PASS c2_list
+PASS c3_search
+PASS c4_remove_ok
+PASS c5_remove_oob
+PASS c6_remove_nonint
+PASS c7_help
+PASS c8_dym_singular
+PASS c9_dym_plural
+PASS c10_dym_none
+PASS c11_missing_req
+PASS c12_unrecognized
+PASS c13_fileformat
+PASS c13b_defaultpath
+== 14/14 scenarios match (source vs source2) ==
+
+### Mutation catches (fail direction) — judge must reject each ###
+--- source vs broken-stdout (MUTATION=stdout; must FAIL somewhere) ---
+MUTATION stdout: CAUGHT on: c1_add,c4_remove_ok,c13_fileformat,c13b_defaultpath
+
+--- source vs broken-stderr (MUTATION=stderr; must FAIL somewhere) ---
+MUTATION stderr: CAUGHT on: c8_dym_singular,c9_dym_plural
+
+--- source vs broken-exit (MUTATION=exit; must FAIL somewhere) ---
+MUTATION exit: CAUGHT on: c5_remove_oob
+
+--- source vs broken-file (MUTATION=file; must FAIL somewhere) ---
+MUTATION file: CAUGHT on: c1_add,c4_remove_ok,c5_remove_oob,c13_fileformat
+
+===== VALIDATION SUMMARY =====
+self-consistency: PASS (source==source)
+mutations caught: 4/4

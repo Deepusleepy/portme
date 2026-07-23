@@ -1,0 +1,18 @@
+captured source → REDACTED-SANDBOX/target-ts/.port/judge/results/source (14 scenarios)
+captured port → REDACTED-SANDBOX/target-ts/.port/judge/results/port (14 scenarios)
+--- source (golden) vs port ---
+PASS c1_add
+PASS c2_list
+PASS c3_search
+PASS c4_remove_ok
+PASS c5_remove_oob
+PASS c6_remove_nonint
+PASS c7_help
+PASS c8_dym_singular
+PASS c9_dym_plural
+PASS c10_dym_none
+PASS c11_missing_req
+PASS c12_unrecognized
+PASS c13_fileformat
+PASS c13b_defaultpath
+== 14/14 scenarios match (source vs port) ==

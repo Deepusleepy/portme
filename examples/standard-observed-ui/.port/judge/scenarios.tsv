@@ -1,0 +1,18 @@
+scenario_id	surface_id	environment	setup	actions	checkpoints	fixture_refs	normalizer	coverage_limit
+J-001	S-001	local loopback	fresh session	reset	empty view; count 0; empty "No tasks here"; focus new-item; live ""	fixtures/J-001/	pocketscan-redact	none
+J-002	S-001	local loopback	reset	add "Buy milk"; add "  Walk dog  "	trim; append; count 2; export both; live "Added X"; focus new-item	fixtures/J-002/	pocketscan-redact	none
+J-003	S-001	local loopback	reset	add "   "; add (no text)	live "Task cannot be empty"; no append; focus new-item	fixtures/J-003/	pocketscan-redact	none
+J-004	S-002	local loopback	2 tasks	toggle 0; toggle 0	done flip; aria "Mark X active/done"; count 1 then 2; live "X completed/active"; focus task-0	fixtures/J-004/	pocketscan-redact	none
+J-005	S-003	local loopback	2 tasks	delete 0	row removed; live "Deleted X"; focus task-0	fixtures/J-005/	pocketscan-redact	none
+J-006	S-004	local loopback	2 tasks,1 done	filter active; filter done; filter all	view rows change; focus filter-V; live "Showing V tasks"; count constant	fixtures/J-006/	pocketscan-redact	none
+J-007	S-004	local loopback	1 task done	filter active	empty view "No tasks here"; count 0; focus filter-active	fixtures/J-007/	pocketscan-redact	none
+J-008	S-002,S-003	local loopback	1 task	toggle 9; delete 5; toggle -1; toggle(no index)	all "Task not found"; state+focus unchanged	fixtures/J-008/	pocketscan-redact	none
+J-009	S-005	local loopback	1 task	Alt+D; Alt+D	theme dark then light; live "Dark/Light theme"; focus unchanged	fixtures/J-009/	pocketscan-redact	none
+J-010	S-005	local loopback	1 task	Alt+D; filter active; Escape	Escape -> filter all + focus new-item + live "Reset view"; theme stays dark	fixtures/J-010/	pocketscan-redact	none
+J-011	S-005	local loopback	1 task focused	Ctrl+Z shortcut	live ""; no change; focus kept	fixtures/J-011/	pocketscan-redact	none
+J-012	S-007	local loopback	1 task	frobnicate; {}; no action	live "Unknown action"; no change; focus kept; 200	fixtures/J-012/	pocketscan-redact	none
+J-013	S-006	local loopback	2 tasks,1 done,filter active	(sequence)	export lists ALL tasks regardless of filter	fixtures/J-013/	pocketscan-redact	none
+J-014	S-008	local loopback	reset	toggle index "x"	400 {"error":"ValueError"}	fixtures/J-014/	pocketscan-redact	none
+J-015	S-008	local loopback	reset	action [1,2]; raw "not json"	400 AttributeError; 400 JSONDecodeError	fixtures/J-015/	pocketscan-redact	none
+J-016	S-000	local loopback	none	GET /health	200 {ok:true,version:<masked>}	fixtures/J-016/	pocketscan-redact + mask health.version	none
+J-PII	S-001	local loopback	reset	add text containing synthetic email+AWS key	behavior: task added, count/export update; PIPELINE: scanner catches, redaction masks both sides	fixtures/J-PII/	pocketscan-redact	demonstrates capture pipeline; secret content masked both sides

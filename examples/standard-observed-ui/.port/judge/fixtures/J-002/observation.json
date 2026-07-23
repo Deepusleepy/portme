@@ -1,0 +1,56 @@
+{
+  "scenario_id": "J-002",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Buy milk done",
+              "checked": false,
+              "text": "Buy milk"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Buy milk\n",
+        "focus": "new-item",
+        "liveRegion": "Added Buy milk"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Buy milk done",
+              "checked": false,
+              "text": "Buy milk"
+            },
+            {
+              "ariaLabel": "Mark Walk dog done",
+              "checked": false,
+              "text": "Walk dog"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Buy milk\n[ ] Walk dog\n",
+        "focus": "new-item",
+        "liveRegion": "Added Walk dog"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+$ notes list
+exit=0
+--stdout--
+1. hello world
+2. Buy MILK
+--stderr--
+--end--
+$ notes list
+exit=0
+--stdout--
+--stderr--
+--end--

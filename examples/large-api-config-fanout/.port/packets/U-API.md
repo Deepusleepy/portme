@@ -1,0 +1,13 @@
+# Packet U-API (v1->v2 translation / API version boundary)
+- Contract IDs: S-004
+- Rule IDs: R-004, R-005
+- Gap IDs: G-003 (bool user_id accepted as int subtype)
+- Source evidence: source/legacy_adapter.py:25-28 (translate)
+- Exclusive target paths: src/translate.py
+- Dependency state: none (leaf; consumes a resolved config dict)
+- Authorization bundle SHA-256: 37280d4e00533ecedff4c5a89c76c3622176f53bc0e22652e30bfd62d7ae9589
+- Check-input declarations: tests/test_translate.py,tests/_bootstrap.py
+- Unit check: python3 -m unittest discover -s tests -p test_translate.py
+- Negative probe: tests/test_translate.py::test_negative_probe (region must stay in meta)
+- Model role: implementer (Opus 4.8); serial degrade
+- Risk: high (defines the v2 envelope shape)

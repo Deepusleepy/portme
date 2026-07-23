@@ -1,0 +1,46 @@
+diff: 28/43 scenarios matched
+  MISMATCH J-12-unknown-keys
+    source: {'stdout': '', 'stderr': 'error: unknown config keys: bar, foo\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: unknown config keys: bar, foo\n', 'exit': 2}
+  MISMATCH J-13-timeout-zero-config
+    source: {'stdout': '', 'stderr': 'error: timeout_ms must be positive\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: timeout_ms must be positive\n', 'exit': 2}
+  MISMATCH J-14-timeout-neg-cli
+    source: {'stdout': '', 'stderr': 'error: timeout_ms must be positive\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: timeout_ms must be positive\n', 'exit': 2}
+  MISMATCH J-15-retries-hi-config
+    source: {'stdout': '', 'stderr': 'error: retries must be between 0 and 5\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: retries must be between 0 and 5\n', 'exit': 2}
+  MISMATCH J-16-retries-hi-cli
+    source: {'stdout': '', 'stderr': 'error: retries must be between 0 and 5\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: retries must be between 0 and 5\n', 'exit': 2}
+  MISMATCH J-17-region-bad-config
+    source: {'stdout': '', 'stderr': 'error: unsupported region\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: unsupported region\n', 'exit': 2}
+  MISMATCH J-18-region-bad-cli
+    source: {'stdout': '', 'stderr': 'error: unsupported region\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: unsupported region\n', 'exit': 2}
+  MISMATCH J-19-env-not-int
+    source: {'stdout': '', 'stderr': "error: invalid literal for int() with base 10: 'abc'\n", 'exit': 2}
+    port:   {'stdout': '', 'stderr': "ERR: invalid literal for int() with base 10: 'abc'\n", 'exit': 2}
+  MISMATCH J-20-config-missing-file
+    source: {'stdout': '', 'stderr': "error: [Errno 2] No such file or directory: '/private/tmp/portme-dogfoods/api-target/.port/judge/fixtures/does-not-exist.json'\n", 'exit': 2}
+    port:   {'stdout': '', 'stderr': "ERR: [Errno 2] No such file or directory: '/private/tmp/portme-dogfoods/api-target/.port/judge/fixtures/does-not-exist.json'\n", 'exit': 2}
+  MISMATCH J-21-config-bad-json
+    source: {'stdout': '', 'stderr': 'error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)\n', 'exit': 2}
+  MISMATCH J-22-request-extra-key
+    source: {'stdout': '', 'stderr': 'error: request must contain only user_id and payload\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: request must contain only user_id and payload\n', 'exit': 2}
+  MISMATCH J-23-request-missing-key
+    source: {'stdout': '', 'stderr': 'error: request must contain only user_id and payload\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: request must contain only user_id and payload\n', 'exit': 2}
+  MISMATCH J-24-uid-list
+    source: {'stdout': '', 'stderr': 'error: user_id must be string or integer\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: user_id must be string or integer\n', 'exit': 2}
+  MISMATCH J-26-request-bad-json
+    source: {'stdout': '', 'stderr': 'error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n', 'exit': 2}
+    port:   {'stdout': '', 'stderr': 'ERR: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n', 'exit': 2}
+  MISMATCH J-35-run-bad-seq
+    source: {'stdout': '', 'stderr': "error: invalid literal for int() with base 10: 'abc'\n", 'exit': 2}
+    port:   {'stdout': '', 'stderr': "ERR: invalid literal for int() with base 10: 'abc'\n", 'exit': 2}

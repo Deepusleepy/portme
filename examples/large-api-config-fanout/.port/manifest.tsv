@@ -1,0 +1,5 @@
+unit_id	source_scope	target_paths	depends_on	contract_ids	rule_ids	gap_ids	check_inputs	unit_check	risk
+U-CONFIG	source/legacy_adapter.py:load_config	src/config.py		S-003	R-001,R-002,R-003	G-001,G-002	tests/test_config.py,tests/_bootstrap.py	python3 -m unittest discover -s tests -p test_config.py	high
+U-API	source/legacy_adapter.py:translate	src/translate.py		S-004	R-004,R-005	G-003	tests/test_translate.py,tests/_bootstrap.py	python3 -m unittest discover -s tests -p test_translate.py	high
+U-EXEC	source/legacy_adapter.py:execute	src/execute.py		S-002	R-006,R-007	G-004	tests/test_execute.py,tests/_bootstrap.py	python3 -m unittest discover -s tests -p test_execute.py	high
+U-CLI	source/legacy_adapter.py:main	src/cli.py	U-CONFIG,U-API,U-EXEC	S-001,S-005	R-008,R-009	G-005	tests/test_cli.py	python3 -m unittest discover -s tests -p test_cli.py	medium

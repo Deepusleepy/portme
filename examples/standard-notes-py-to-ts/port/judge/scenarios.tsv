@@ -1,0 +1,16 @@
+scenario_id	surface_id	environment	setup	actions	checkpoints	fixture_refs	normalizer	coverage_limit
+J-001	S1,S14	fresh NOTES_FILE	empty store	add "hello world"; add "Buy MILK"	stdout Added note N; exit 0; file bytes	golden/c1_add.txt	none (byte-exact)	none
+J-002	S2	fresh NOTES_FILE	seed 2 notes / then empty	list; list	numbered lines; empty→no output; exit 0	golden/c2_list.txt	none	none
+J-003	S3a	fresh NOTES_FILE	seed 2 notes	search milk; search HELLO; search zzz	case-insensitive (ASCII) matches with original index; exit 0	golden/c3_search.txt	none	none
+J-004	S4	fresh NOTES_FILE	seed 2 notes	remove 1	Removed: text; exit 0; file rewritten	golden/c4_remove_ok.txt	none	none
+J-005	S5	fresh NOTES_FILE	seed 2 notes / empty	remove 5; remove 0; remove -1; (empty) remove 1	error: no note number N; exit 1; file intact	golden/c5_remove_oob.txt	none	none
+J-006	S6a	fresh NOTES_FILE	empty	remove abc	subparser usage; invalid int value (ASCII); exit 2	golden/c6_remove_nonint.txt	none	none
+J-007	S7,S8	fresh NOTES_FILE	empty	(no args); -h; --help; add -h; list -h; search -h; remove -h	help to stdout; exit 0	golden/c7_help.txt	none	none
+J-008	S9	fresh NOTES_FILE	empty	lst	Did you mean 'list'?; exit 2	golden/c8_dym_singular.txt	none	none
+J-009	S10	fresh NOTES_FILE	empty	addlis	(Did you mean one of: 'add', 'list'?); exit 2	golden/c9_dym_plural.txt	none	none
+J-010	S11	fresh NOTES_FILE	empty	xyz	plain invalid choice, no suggestion; exit 2	golden/c10_dym_none.txt	none	none
+J-011	S12	fresh NOTES_FILE	empty	add; search; remove	subparser usage; required-arg error; exit 2	golden/c11_missing_req.txt	none	none
+J-012	S13	fresh NOTES_FILE	empty	add a b; remove 1 2; --bad	top-level usage; unrecognized arguments; exit 2	golden/c12_unrecognized.txt	none	none
+J-013	S14	fresh NOTES_FILE	raw file w/ blank+whitespace+spaced lines	list; add; list; add	blank/ws lines skipped; trailing \n only stripped; spaces preserved	golden/c13_fileformat.txt	none	none
+J-013b	S15	fresh sandbox HOME, NOTES_FILE unset	no store	add fromdefault; list	store created at $HOME/.notes.txt; exit 0	golden/c13b_defaultpath.txt	none	none
+J-014	S14	fresh NOTES_FILE	BOM-only line; U+001C-only line; retained note ending in BOM	list; add tail	Python str.strip whitespace predicate; retained bytes unchanged	golden/c14_unicode_whitespace.txt	none (byte-exact)	none

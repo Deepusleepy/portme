@@ -1,0 +1,8 @@
+map_id	unit_id	contract_ids	unit_kind	from_node	relation	to_node	evidence	cycle_id	risk
+E-001	U-CLI	S-001,S-005	behavior-slice	cli.main	parses	argv	legacy_adapter.py:40-45		medium
+E-002	U-CLI	S-003	behavior-slice	cli.main	invokes	config.load_config	legacy_adapter.py:47		high
+E-003	U-CLI	S-004	behavior-slice	cli.main	invokes	translate.translate	legacy_adapter.py:47		high
+E-004	U-CLI	S-002	behavior-slice	cli.main	invokes	execute.execute	legacy_adapter.py:48		high
+E-005	U-API	S-004	behavior-slice	translate.translate	reads	config.region/timeout/retries	legacy_adapter.py:28		high
+E-006	U-EXEC	S-002	behavior-slice	execute.execute	reads	plan.meta.maxAttempts	legacy_adapter.py:36		high
+E-007	U-CLI	S-005	behavior-slice	cli.main	catches	ValueError/OSError/JSONDecodeError	legacy_adapter.py:50-51		medium

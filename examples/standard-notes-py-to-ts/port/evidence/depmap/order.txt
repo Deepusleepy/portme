@@ -1,0 +1,6 @@
+# batch 1
+notes_cli/__init__.py
+# batch 2
+notes_cli/commands.py
+# batch 3
+notes_cli/cli.py

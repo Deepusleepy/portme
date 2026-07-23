@@ -1,0 +1,39 @@
+{
+  "scenario_id": "J-003",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 0,
+          "empty": "No tasks here",
+          "filter": "all",
+          "rows": [],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "",
+        "focus": "new-item",
+        "liveRegion": "Task cannot be empty"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 0,
+          "empty": "No tasks here",
+          "filter": "all",
+          "rows": [],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "",
+        "focus": "new-item",
+        "liveRegion": "Task cannot be empty"
+      }
+    }
+  ]
+}

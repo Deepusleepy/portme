@@ -1,0 +1,99 @@
+$ notes ''
+exit=0
+--stdout--
+usage: notes [-h] command ...
+
+Keep plain-text notes.
+
+positional arguments:
+  command
+    add       Add a note
+    list      List notes
+    search    Search notes
+    remove    Remove a note by number
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--
+$ notes -h
+exit=0
+--stdout--
+usage: notes [-h] command ...
+
+Keep plain-text notes.
+
+positional arguments:
+  command
+    add       Add a note
+    list      List notes
+    search    Search notes
+    remove    Remove a note by number
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--
+$ notes --help
+exit=0
+--stdout--
+usage: notes [-h] command ...
+
+Keep plain-text notes.
+
+positional arguments:
+  command
+    add       Add a note
+    list      List notes
+    search    Search notes
+    remove    Remove a note by number
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--
+$ notes add -h
+exit=0
+--stdout--
+usage: notes add [-h] text
+
+positional arguments:
+  text
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--
+$ notes list -h
+exit=0
+--stdout--
+usage: notes list [-h]
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--
+$ notes search -h
+exit=0
+--stdout--
+usage: notes search [-h] term
+
+positional arguments:
+  term
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--
+$ notes remove -h
+exit=0
+--stdout--
+usage: notes remove [-h] number
+
+positional arguments:
+  number
+
+options:
+  -h, --help  show this help message and exit
+--stderr--
+--end--

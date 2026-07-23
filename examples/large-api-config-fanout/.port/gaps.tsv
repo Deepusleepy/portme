@@ -1,0 +1,6 @@
+gap_id	unit_id	source_site	category	observation	decision_needed	resolution	evidence	decision_owner	risk	status
+G-001	U-CONFIG	legacy_adapter.py:4	defaults	strict=True in DEFAULTS but never read after load	keep or drop inert key	keep accepted+stored+inert; validate as known key; never wire behavior	R-003,legacy_adapter.py:4	R-003	low	closed
+G-002	U-CONFIG	legacy_adapter.py:15-17	precedence	env applies even when CLI arg is None; CLI wins when present	fix exact layering order	defaults<file<PORTME_TIMEOUT_MS<CLI, CLI only when not None	R-002,legacy_adapter.py:15-19	R-002	high	closed
+G-003	U-API	legacy_adapter.py:27	types	isinstance(user_id,(str,int)) admits bool (int subtype)	reproduce or reject bool	reproduce: bool accepted, str(True)="True"	R-005,legacy_adapter.py:27	R-005	medium	closed
+G-004	U-EXEC	legacy_adapter.py:32	parsing	statuses skips empty tokens; int() may raise on junk	define empty/junk handling	empty seq->[]->200; junk int() raises ValueError caught->exit2	R-006,legacy_adapter.py:32	R-006	medium	closed
+G-005	U-CLI	legacy_adapter.py:50	errors	only ValueError/OSError/JSONDecodeError caught; argparse exits 2 itself	define caught set + exit code	catch exactly those three->exit2; argparse SystemExit(2) preserved	R-008,legacy_adapter.py:50-51	R-008	medium	closed

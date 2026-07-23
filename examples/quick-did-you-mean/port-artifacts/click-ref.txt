@@ -1,0 +1,15 @@
+=== click: notes lst (exit=2) ===
+Usage: notes [OPTIONS] COMMAND [ARGS]...
+Try 'notes --help' for help.
+
+Error: No such command 'lst'. Did you mean 'list'?
+=== click: notes addlis (exit=2) ===
+Usage: notes [OPTIONS] COMMAND [ARGS]...
+Try 'notes --help' for help.
+
+Error: No such command 'addlis'. (Did you mean one of: 'add', 'list'?)
+=== click: notes xyz (exit=2) ===
+Usage: notes [OPTIONS] COMMAND [ARGS]...
+Try 'notes --help' for help.
+
+Error: No such command 'xyz'.

@@ -1,0 +1,28 @@
+$ notes remove 5
+exit=1
+--stdout--
+--stderr--
+error: no note number 5
+--end--
+$ notes remove 0
+exit=1
+--stdout--
+--stderr--
+error: no note number 0
+--end--
+$ notes remove -1
+exit=1
+--stdout--
+--stderr--
+error: no note number -1
+--end--
+--file--
+           h   e   l   l   o       w   o   r   l   d  \n   B   u   y    
+           M   I   L   K  \n                                            
+
+$ notes remove 1
+exit=1
+--stdout--
+--stderr--
+error: no note number 1
+--end--

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "bash",
+    "full_referee.sh"
+  ],
+  "duration_seconds": 1.3077411651611328,
+  "ended_at": 1784782402.969253,
+  "exit_code": 0,
+  "pid": 39367,
+  "sha256": {
+    "cmd.txt": "26a783b7c81c46853f409b333fd02a841f332b4744a3fd0f0943363301797622",
+    "exit.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "output.txt": "633685e97649a35b87ce84205901842924824f838f8ef162b319721fb5f09c2a"
+  },
+  "started_at": 1784782401.661512,
+  "timeout_seconds": 1800.0
+}

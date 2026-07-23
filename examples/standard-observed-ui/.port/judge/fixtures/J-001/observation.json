@@ -1,0 +1,22 @@
+{
+  "scenario_id": "J-001",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 0,
+          "empty": "No tasks here",
+          "filter": "all",
+          "rows": [],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "",
+        "focus": "new-item",
+        "liveRegion": ""
+      }
+    }
+  ]
+}

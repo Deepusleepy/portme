@@ -1,0 +1,17 @@
+{
+  "name": "notes-ts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "notes": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "notes": "node dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "typescript": "6.0.3"
+  }
+}

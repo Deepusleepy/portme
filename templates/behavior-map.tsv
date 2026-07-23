@@ -1,0 +1,3 @@
+# Template defined by references/mapping.md; replace every <placeholder> and remove this comment when parsing.
+map_id	unit_id	contract_ids	unit_kind	from_node	relation	to_node	evidence	cycle_id	risk
+E-001	U-001	<S-IDs>	<behavior-slice/file>	<entry>	<relation>	<result>	<source path/trace>	<cycle or blank>	<low/medium/high>

@@ -1,0 +1,3 @@
+from	to
+notes_cli/cli.py	notes_cli/__init__.py
+notes_cli/cli.py	notes_cli/commands.py

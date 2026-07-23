@@ -1,0 +1,13 @@
+# Packet U-EXEC (execution / retry engine)
+- Contract IDs: S-002
+- Rule IDs: R-006, R-007
+- Gap IDs: G-004 (sequence parsing / empty+junk handling)
+- Source evidence: source/legacy_adapter.py:30-38 (execute)
+- Exclusive target paths: src/execute.py
+- Dependency state: none (leaf; consumes a v2 plan dict)
+- Authorization bundle SHA-256: 37280d4e00533ecedff4c5a89c76c3622176f53bc0e22652e30bfd62d7ae9589
+- Check-input declarations: tests/test_execute.py,tests/_bootstrap.py
+- Unit check: python3 -m unittest discover -s tests -p test_execute.py
+- Negative probe: tests/test_execute.py::test_negative_probe (200 must not be an error)
+- Model role: implementer (Opus 4.8); serial degrade
+- Risk: high (retry semantics; 503-only)

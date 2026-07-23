@@ -1,0 +1,21 @@
+$ notes add
+exit=2
+--stdout--
+--stderr--
+usage: notes add [-h] text
+notes add: error: the following arguments are required: text
+--end--
+$ notes search
+exit=2
+--stdout--
+--stderr--
+usage: notes search [-h] term
+notes search: error: the following arguments are required: term
+--end--
+$ notes remove
+exit=2
+--stdout--
+--stderr--
+usage: notes remove [-h] number
+notes remove: error: the following arguments are required: number
+--end--

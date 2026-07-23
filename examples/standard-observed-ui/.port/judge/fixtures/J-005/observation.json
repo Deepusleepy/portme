@@ -1,0 +1,79 @@
+{
+  "scenario_id": "J-005",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark One done",
+              "checked": false,
+              "text": "One"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] One\n",
+        "focus": "new-item",
+        "liveRegion": "Added One"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark One done",
+              "checked": false,
+              "text": "One"
+            },
+            {
+              "ariaLabel": "Mark Two done",
+              "checked": false,
+              "text": "Two"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] One\n[ ] Two\n",
+        "focus": "new-item",
+        "liveRegion": "Added Two"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Two done",
+              "checked": false,
+              "text": "Two"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Two\n",
+        "focus": "task-0",
+        "liveRegion": "Deleted One"
+      }
+    }
+  ]
+}

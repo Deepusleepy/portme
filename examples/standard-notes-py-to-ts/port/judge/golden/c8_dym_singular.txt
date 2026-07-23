@@ -1,0 +1,7 @@
+$ notes lst
+exit=2
+--stdout--
+--stderr--
+usage: notes [-h] command ...
+notes: error: argument command: invalid choice: 'lst' (choose from 'add', 'list', 'search', 'remove'). Did you mean 'list'?
+--end--

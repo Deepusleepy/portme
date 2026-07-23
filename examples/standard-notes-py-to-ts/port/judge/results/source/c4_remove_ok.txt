@@ -1,0 +1,9 @@
+$ notes remove 1
+exit=0
+--stdout--
+Removed: hello world
+--stderr--
+--end--
+--file--
+           B   u   y       M   I   L   K  \n                            
+

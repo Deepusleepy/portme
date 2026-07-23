@@ -1,0 +1,16 @@
+$ notes add hello\ world
+exit=0
+--stdout--
+Added note 1.
+--stderr--
+--end--
+$ notes add Buy\ MILK
+exit=0
+--stdout--
+Added note 2.
+--stderr--
+--end--
+--file--
+           h   e   l   l   o       w   o   r   l   d  \n   B   u   y    
+           M   I   L   K  \n                                            
+

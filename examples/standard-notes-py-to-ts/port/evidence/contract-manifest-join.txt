@@ -1,0 +1,57 @@
+=== Manifest authorization schema ===
+  header: OK (check_inputs between gap_ids and unit_check)
+  check_inputs: all units declared
+=== Surface coverage ===
+  S1    [exact                     ] -> units U-002
+  S2    [exact                     ] -> units U-002
+  S3a   [exact                     ] -> units U-002
+  S3b   [intentionally-divergent (d-001)] -> divergence D-001
+  S4    [exact                     ] -> units U-002
+  S5    [exact                     ] -> units U-002
+  S6a   [exact                     ] -> units U-003
+  S6b   [intentionally-divergent (d-002)] -> divergence D-002
+  S7    [exact                     ] -> units U-003
+  S8    [exact                     ] -> units U-003
+  S9    [exact                     ] -> units U-001,U-004
+  S10   [exact                     ] -> units U-001,U-004
+  S11   [exact                     ] -> units U-001,U-004
+  S12   [exact                     ] -> units U-003
+  S13   [exact                     ] -> units U-003
+  S14   [exact                     ] -> units U-002
+  S15   [exact                     ] -> units U-002
+=== Non-functional coverage ===
+  NF-001 -> units U-005
+  NF-002 -> units U-005,U-004
+  NF-003 -> units U-005
+  NF-004 -> units U-005
+=== Orphan check (manifest cites nonexistent id) ===
+  none
+=== (a) judge scenarios.tsv surface_ids exist in contract ===
+  J-001   S1    OK
+  J-001   S14   OK
+  J-002   S2    OK
+  J-003   S3a   OK
+  J-004   S4    OK
+  J-005   S5    OK
+  J-006   S6a   OK
+  J-007   S7    OK
+  J-007   S8    OK
+  J-008   S9    OK
+  J-009   S10   OK
+  J-010   S11   OK
+  J-011   S12   OK
+  J-012   S13   OK
+  J-013   S14   OK
+  J-013b  S15   OK
+  J-014   S14   OK
+=== (b) divergence surfaces exist + are intentionally-divergent ===
+  D-001 -> S3b   OK
+  D-002 -> S6b   OK
+=== (c) behavior-map contract_ids exist ===
+  (all behavior-map contract_ids valid)
+=== (d) no citation-bearing artifact cites a DELETED bare ID (S3/S6) ===
+  none — no deleted bare S3/S6 in citation-bearing artifacts
+
+PROBLEMS: 0
+
+JOIN+INTEGRITY: PASS

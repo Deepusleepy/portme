@@ -1,0 +1,40 @@
+test_argparse_missing_request_exit2 (test_cli.CliTest.test_argparse_missing_request_exit2) ... ok
+test_bad_json_request_exit2 (test_cli.CliTest.test_bad_json_request_exit2) ... ok
+test_canonical_json_bytes (test_cli.CliTest.test_canonical_json_bytes) ... ok
+test_error_to_stderr_exit2 (test_cli.CliTest.test_error_to_stderr_exit2) ... ok
+test_negative_probe (test_cli.CliTest.test_negative_probe) ... ok
+test_plan_defaults (test_cli.CliTest.test_plan_defaults) ... ok
+test_run_retry_503 (test_cli.CliTest.test_run_retry_503) ... ok
+test_cli_overrides_env_and_file (test_config.ConfigTest.test_cli_overrides_env_and_file) ... ok
+test_defaults (test_config.ConfigTest.test_defaults) ... ok
+test_env_overrides_file (test_config.ConfigTest.test_env_overrides_file) ... ok
+test_eu_west_allowed (test_config.ConfigTest.test_eu_west_allowed) ... ok
+test_file_overrides_defaults (test_config.ConfigTest.test_file_overrides_defaults) ... ok
+test_negative_probe (test_config.ConfigTest.test_negative_probe) ... ok
+test_region_validation (test_config.ConfigTest.test_region_validation) ... ok
+test_retries_range (test_config.ConfigTest.test_retries_range) ... ok
+test_strict_inert_accepted (test_config.ConfigTest.test_strict_inert_accepted) ... ok
+test_timeout_must_be_positive (test_config.ConfigTest.test_timeout_must_be_positive) ... ok
+test_unknown_keys_sorted (test_config.ConfigTest.test_unknown_keys_sorted) ... ok
+test_200_single_attempt (test_execute.ExecuteTest.test_200_single_attempt) ... ok
+test_302_boundary_no_error (test_execute.ExecuteTest.test_302_boundary_no_error) ... ok
+test_500_upstream_no_retry (test_execute.ExecuteTest.test_500_upstream_no_retry) ... ok
+test_503_exhausts_attempts (test_execute.ExecuteTest.test_503_exhausts_attempts) ... ok
+test_503_no_retry_when_max1 (test_execute.ExecuteTest.test_503_no_retry_when_max1) ... ok
+test_503_recover_early (test_execute.ExecuteTest.test_503_recover_early) ... ok
+test_503_then_recover (test_execute.ExecuteTest.test_503_then_recover) ... ok
+test_empty_sequence_defaults_200 (test_execute.ExecuteTest.test_empty_sequence_defaults_200) ... ok
+test_negative_probe (test_execute.ExecuteTest.test_negative_probe) ... ok
+test_bad_user_id_type (test_translate.TranslateTest.test_bad_user_id_type) ... ok
+test_bool_user_id_accepted (test_translate.TranslateTest.test_bool_user_id_accepted) ... ok
+test_extra_key_rejected (test_translate.TranslateTest.test_extra_key_rejected) ... ok
+test_int_user_id_stringified (test_translate.TranslateTest.test_int_user_id_stringified) ... ok
+test_max_attempts_is_retries_plus_one (test_translate.TranslateTest.test_max_attempts_is_retries_plus_one) ... ok
+test_missing_key_rejected (test_translate.TranslateTest.test_missing_key_rejected) ... ok
+test_negative_probe (test_translate.TranslateTest.test_negative_probe) ... ok
+test_shape (test_translate.TranslateTest.test_shape) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.208s
+
+OK

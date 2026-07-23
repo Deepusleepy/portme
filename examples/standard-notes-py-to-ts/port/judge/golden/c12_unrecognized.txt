@@ -1,0 +1,21 @@
+$ notes add a b
+exit=2
+--stdout--
+--stderr--
+usage: notes [-h] command ...
+notes: error: unrecognized arguments: b
+--end--
+$ notes remove 1 2
+exit=2
+--stdout--
+--stderr--
+usage: notes [-h] command ...
+notes: error: unrecognized arguments: 2
+--end--
+$ notes --bad
+exit=2
+--stdout--
+--stderr--
+usage: notes [-h] command ...
+notes: error: unrecognized arguments: --bad
+--end--

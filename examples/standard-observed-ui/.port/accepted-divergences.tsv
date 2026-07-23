@@ -1,0 +1,3 @@
+id	surface	source_behavior	port_behavior	reason	approved_by	approved_at	final_signoff
+D-001	S-000	/health version "ui-observed-1"	/health version "pocket-tasks-port-1"	port is a distinct build with its own identity string; comparator normalizes the version field	harness-preauthorized local dogfood	2026-07-23	pending
+D-CAND-1	S-008	400 body exposes exception class name (ValueError/AttributeError/JSONDecodeError)	reproduced identically for parity	NOTE ONLY: leaking exception class names is a minor info-disclosure hardening candidate; per doctrine flagged, but NOT diverged so parity is preserved. If the port were productionized, replace with a generic {"error":"bad_request"}.	harness-preauthorized local dogfood	2026-07-23	pending (recommendation, not applied)

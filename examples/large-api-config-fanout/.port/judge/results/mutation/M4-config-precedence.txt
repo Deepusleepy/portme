@@ -1,0 +1,4 @@
+diff: 42/43 scenarios matched
+  MISMATCH J-05-plan-cli-over-env-over-file
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":2,"region":"eu-west","timeoutMs":999},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":2,"region":"eu-west","timeoutMs":250},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}

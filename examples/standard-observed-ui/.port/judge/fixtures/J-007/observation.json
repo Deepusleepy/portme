@@ -1,0 +1,68 @@
+{
+  "scenario_id": "J-007",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark X done",
+              "checked": false,
+              "text": "X"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] X\n",
+        "focus": "new-item",
+        "liveRegion": "Added X"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 0,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark X active",
+              "checked": true,
+              "text": "X"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[x] X\n",
+        "focus": "task-0",
+        "liveRegion": "X completed"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 0,
+          "empty": "No tasks here",
+          "filter": "active",
+          "rows": [],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[x] X\n",
+        "focus": "filter-active",
+        "liveRegion": "Showing active tasks"
+      }
+    }
+  ]
+}

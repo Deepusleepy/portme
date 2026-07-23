@@ -1,0 +1,158 @@
+{
+  "scenario_id": "J-006",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Keep done",
+              "checked": false,
+              "text": "Keep"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Keep\n",
+        "focus": "new-item",
+        "liveRegion": "Added Keep"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Keep done",
+              "checked": false,
+              "text": "Keep"
+            },
+            {
+              "ariaLabel": "Mark Done done",
+              "checked": false,
+              "text": "Done"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Keep\n[ ] Done\n",
+        "focus": "new-item",
+        "liveRegion": "Added Done"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Keep done",
+              "checked": false,
+              "text": "Keep"
+            },
+            {
+              "ariaLabel": "Mark Done active",
+              "checked": true,
+              "text": "Done"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Keep\n[x] Done\n",
+        "focus": "task-1",
+        "liveRegion": "Done completed"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "active",
+          "rows": [
+            {
+              "ariaLabel": "Mark Keep done",
+              "checked": false,
+              "text": "Keep"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Keep\n[x] Done\n",
+        "focus": "filter-active",
+        "liveRegion": "Showing active tasks"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "done",
+          "rows": [
+            {
+              "ariaLabel": "Mark Done active",
+              "checked": true,
+              "text": "Done"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Keep\n[x] Done\n",
+        "focus": "filter-done",
+        "liveRegion": "Showing done tasks"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Keep done",
+              "checked": false,
+              "text": "Keep"
+            },
+            {
+              "ariaLabel": "Mark Done active",
+              "checked": true,
+              "text": "Done"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Keep\n[x] Done\n",
+        "focus": "filter-all",
+        "liveRegion": "Showing all tasks"
+      }
+    }
+  ]
+}

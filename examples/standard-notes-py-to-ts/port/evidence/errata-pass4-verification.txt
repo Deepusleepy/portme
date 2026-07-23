@@ -1,0 +1,48 @@
+Errata pass 4 authorization-bundle verification receipt — 2026-07-23
+
+Scope: publication schema/integrity migration only. This receipt does not
+claim or reconstruct historical Phase 1 approval.
+
+Authorization-bundle schema and pins
+PASS manifest header: check_inputs is required between gap_ids and unit_check
+PASS all 5 units have non-empty check_inputs
+PASS U-005 binds package.json, package-lock.json, tsconfig.json, and source-python/SHA256SUMS
+PASS U-001..U-004 repeat the shared judge.sh, scenarios.sh, adapters/port.sh,
+     and golden/*.txt declarations; the runner deduplicates exact repeats
+PASS manifest-only SHA-256 (evidence, not authorization):
+     35d9ee3ea7f8f8e9cf562d2ffa33392edc719ac955be47ef6bb8ac6ab079bd8a
+PASS manifest/check-input authorization bundle SHA-256:
+     b5f600b99716a82bf87a92076a678a4cea8013dee11861ff0b66b2f4fe79b95b
+PASS verify.sh EXPECTED_AUTHORIZATION_BUNDLE_SHA256 matches the current bundle
+     and is checked before install/build, then passed unchanged to port_queue
+
+Standard clean-copy verification
+Command: ./verify.sh
+PASS publication bundle pin matched before execution
+PASS shipped Python source SHA-256: 4/4 files
+PASS schema-aware contract/manifest/scenario join: 0 problems
+PASS deterministic npm ci and TypeScript build
+PASS judge pass direction: 15/15; mutation classes caught: 4/4
+PASS fresh source-vs-port differential: 15/15
+PASS shipped source-vs-golden drift: 15/15
+PASS differential stress: 70/70
+PASS traversal-label rejection and logical/physical/symlink ESM entry probes
+PASS publication-pinned queue: 5/5 units, 0 failed-check
+PASS clean-copy cleanup: no generated node_modules/ or dist/ in the example
+
+Repository validation
+PASS bundled utility suite: 95/95 tests with PYTHONDONTWRITEBYTECODE=1
+PASS official skill-creator quick_validate.py in a disposable /tmp virtual
+     environment using the existing external cached PyYAML package
+PASS local Markdown links, JSON parsing, and TSV column structure
+PASS shell syntax for all shipped .sh files
+PASS vendored scripts/port_queue.py byte identity; SHA-256:
+     a22b62ab18d47002d0f7baec8bb5f241b4fe45c1ff2037fbe9d6fdd3bf07b557
+PASS no generated node_modules, dist, Python bytecode, or __pycache__ remains
+     in either shipped example; pre-existing named exclusion fixtures under
+     scripts/tests and the ignored research fixture were not modified
+
+The pin above establishes publication bundle integrity only. A real Portme run
+must separately obtain user approval in the live conversation for the exact
+commands, check-input declarations, and resulting bundle digest. Bundle
+hashing does not sandbox hostile target execution.

@@ -1,0 +1,6 @@
+===== C3: notes xyz =====
+exit=2
+--- stderr ---
+usage: notes [-h] command ...
+notes: error: argument command: invalid choice: 'xyz' (choose from 'add', 'list', 'search', 'remove')
+--- stdout ---

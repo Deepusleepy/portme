@@ -1,0 +1,17 @@
+$ notes search milk
+exit=0
+--stdout--
+2. Buy MILK
+--stderr--
+--end--
+$ notes search HELLO
+exit=0
+--stdout--
+1. hello world
+--stderr--
+--end--
+$ notes search zzz
+exit=0
+--stdout--
+--stderr--
+--end--

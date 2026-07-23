@@ -1,0 +1,17 @@
+$ notes list
+exit=0
+--stdout--
+1. ﻿
+2. keep﻿
+--stderr--
+--end--
+$ notes add tail
+exit=0
+--stdout--
+Added note 3.
+--stderr--
+--end--
+--file--
+         357 273 277  \n   k   e   e   p 357 273 277  \n   t   a   i   l
+          \n                                                            
+

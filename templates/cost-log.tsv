@@ -1,0 +1,3 @@
+# Template defined by references/sizing.md; replace every <placeholder> and remove this comment when parsing.
+gate	mode	units	size_band	calendar_range	low_tokens	high_tokens	actual_tokens	actual_cost	elapsed_minutes	model_plan	notes
+<gate>	<mode>	<count>	<small/medium/large>	<range>	<post-Phase-2 low>	<high>	<actual>	<cost>	<minutes>	<approved tiers>	<evidence>

@@ -1,0 +1,15 @@
+$ notes add fromdefault
+exit=0
+--stdout--
+Added note 1.
+--stderr--
+--end--
+$ notes list
+exit=0
+--stdout--
+1. fromdefault
+--stderr--
+--end--
+--homefile--
+           f   r   o   m   d   e   f   a   u   l   t  \n                
+

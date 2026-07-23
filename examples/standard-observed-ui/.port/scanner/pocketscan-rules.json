@@ -1,0 +1,13 @@
+{
+  "ruleset": "pocketscan-default",
+  "ruleset_version": "1.0.0",
+  "rules": [
+    {"id": "aws-access-key-id", "pattern": "AKIA[0-9A-Z]{16}", "mask": "[REDACTED:aws-key]"},
+    {"id": "email", "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", "mask": "[REDACTED:email]"},
+    {"id": "generic-token-assignment", "pattern": "(?i)(token|secret|api[_-]?key|password)\\s*[=:]\\s*[A-Za-z0-9/+_-]{6,}", "mask": "[REDACTED:secret]"},
+    {"id": "bearer-token", "pattern": "(?i)bearer\\s+[A-Za-z0-9._-]{10,}", "mask": "[REDACTED:bearer]"},
+    {"id": "us-ssn", "pattern": "\\b[0-9]{3}-[0-9]{2}-[0-9]{4}\\b", "mask": "[REDACTED:ssn]"},
+    {"id": "credit-card", "pattern": "\\b(?:[0-9]{4}[ -]?){3}[0-9]{4}\\b", "mask": "[REDACTED:cc]"},
+    {"id": "private-key-header", "pattern": "-----BEGIN [A-Z ]*PRIVATE KEY-----", "mask": "[REDACTED:private-key]"}
+  ]
+}

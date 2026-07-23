@@ -1,0 +1,11 @@
+unit_id	unit_kind	from_node	relation	to_node	evidence	contract_ids	cycle_id	risk
+U-001	file	src/difflib.ts	implements	getCloseMatches + formatPossibilities + pyRepr	cli.py:1-33 (_INVALID_CHOICE_RE,_format_possibilities) + stdlib difflib	S9,S10,S11		high
+U-002	file	src/commands.ts	implements	_read/_write + add/list/search/remove + NOTES_FILE resolution	source-python/notes_cli/commands.py; J-014 Unicode whitespace probe	S1,S2,S3a,S4,S5,S14,S15		high
+U-003	file	src/argparse.ts	implements	argparse-compatible parser: usage/help/error text, subparsers, prog routing, pyInt	cli.py:24-79 (NotesArgumentParser,build_parser); Python 3.14.6 argparse	S6a,S7,S8,S12,S13		high
+U-004	file	src/cli.ts	wires	build_parser + main(argv) + realpath-safe ESM entry; augments parse error with did-you-mean	source-python/notes_cli/cli.py:56-84; verify.sh symlink probes	S9,S10,S11,NF-002		high
+U-005	file	package.json+package-lock.json+tsconfig.json+verify.sh+source-python+scripts/port_queue.py	builds	tsc → dist/ (zero runtime deps); self-contained deterministic verification	contract NF + pass-3 publication repair	NF-001,NF-002,NF-003,NF-004		low
+U-004	edge	src/cli.ts	imports	src/commands.ts	mirrors source edge cli.py -> commands.py (port/evidence/depmap/edges.tsv)	S1,S2,S3a,S4,S5,S14,S15		low
+U-004	edge	src/cli.ts	imports	src/difflib.ts	did-you-mean augmentation; mirrors cli.py:5 (from difflib import get_close_matches)	S9,S10,S11		low
+U-004	edge	src/cli.ts	imports	src/argparse.ts	parser layer split out of cli.py	S6a,S7,S8,S12,S13		low
+U-003	edge	src/argparse.ts	imports	src/difflib.ts	pyRepr shared helper for invalid-choice/invalid-int messages (canonical-home per rulebook Language-migration checklist item "Module boundaries and canonical homes for shared helpers")	S6a,S9,S10,S11		low
+U-002	edge	src/commands.ts	imports	node:fs, node:os, node:path (stdlib)	mirrors commands.py:2 (import os)	S14,S15		low

@@ -1,0 +1,9 @@
+Source oracle: REDACTED-SANDBOX/target-opus, run as
+  NOTES_FILE=<tmp> python3 -m notes_cli.cli <args>   (Python 3.14.6)
+Captured 2026-07-22. See status.md contract for the authoritative behavior list.
+
+Published oracle (errata pass 3, 2026-07-23): `source-python/`, run as
+  PYTHONPATH=source-python NOTES_FILE=<tmp> python3 -m notes_cli.cli <args>
+Its four files are byte-pinned by `source-python/SHA256SUMS`; `verify.sh`
+checks those digests before capture. The original redacted source hashes and
+the shipped hashes are identical. J-014 was captured from this shipped oracle.

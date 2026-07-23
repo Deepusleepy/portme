@@ -1,0 +1,13 @@
+# Packet U-CONFIG (config system)
+- Contract IDs: S-003
+- Rule IDs: R-001, R-002, R-003
+- Gap IDs: G-001 (strict inert -> keep), G-002 (precedence order -> defaults<file<env<CLI)
+- Source evidence: source/legacy_adapter.py:4-23 (DEFAULTS, load_config)
+- Exclusive target paths: src/config.py
+- Dependency state: none (leaf)
+- Authorization bundle SHA-256: 37280d4e00533ecedff4c5a89c76c3622176f53bc0e22652e30bfd62d7ae9589
+- Check-input declarations: tests/test_config.py,tests/_bootstrap.py
+- Unit check: python3 -m unittest discover -s tests -p test_config.py
+- Negative probe: tests/test_config.py::test_negative_probe (defaults must not silently be wrong)
+- Model role: implementer (Opus 4.8); serial degrade — see status.md constraint
+- Risk: high (defines config precedence for all downstream units)

@@ -1,0 +1,7 @@
+gate	mode	units	size_band	calendar_range	low_tokens	high_tokens	actual_tokens	actual_cost	elapsed_minutes	model_plan	notes
+sizing	Standard	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	NA=single-session dogfood, tokens not metered by harness; source-availability=2 override forces Standard
+phase-0	Standard	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	judge built + 2-way mutation validated (6/6); 17 goldens admitted via capture pipeline
+phase-2	Standard	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	risky slice = index/error contract; kept in place (small port, no fan-out to protect)
+phase-3	Standard	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	both units implemented; queue 2/2 present
+phase-4-5	Standard	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	authorized manifest queue 2/2 verified 0 failed; judge 17/17
+phase-6	Standard	2	small	<1 day	NA	NA	NA	NA	NA	impl:opus-4.8;review:opus-4.8;rules:opus-4.8	adversarial review applied; markers clean; disposable run, no rollout target

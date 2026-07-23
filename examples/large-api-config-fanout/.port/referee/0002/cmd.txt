@@ -1,0 +1,1 @@
+bash full_referee.sh

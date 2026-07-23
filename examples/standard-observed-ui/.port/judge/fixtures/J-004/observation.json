@@ -1,0 +1,112 @@
+{
+  "scenario_id": "J-004",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Alpha done",
+              "checked": false,
+              "text": "Alpha"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Alpha\n",
+        "focus": "new-item",
+        "liveRegion": "Added Alpha"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Alpha done",
+              "checked": false,
+              "text": "Alpha"
+            },
+            {
+              "ariaLabel": "Mark Beta done",
+              "checked": false,
+              "text": "Beta"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Alpha\n[ ] Beta\n",
+        "focus": "new-item",
+        "liveRegion": "Added Beta"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Alpha active",
+              "checked": true,
+              "text": "Alpha"
+            },
+            {
+              "ariaLabel": "Mark Beta done",
+              "checked": false,
+              "text": "Beta"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[x] Alpha\n[ ] Beta\n",
+        "focus": "task-0",
+        "liveRegion": "Alpha completed"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark Alpha done",
+              "checked": false,
+              "text": "Alpha"
+            },
+            {
+              "ariaLabel": "Mark Beta done",
+              "checked": false,
+              "text": "Beta"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] Alpha\n[ ] Beta\n",
+        "focus": "task-0",
+        "liveRegion": "Alpha active"
+      }
+    }
+  ]
+}

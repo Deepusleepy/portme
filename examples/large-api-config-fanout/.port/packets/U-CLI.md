@@ -1,0 +1,13 @@
+# Packet U-CLI (integration / CLI)
+- Contract IDs: S-001, S-005
+- Rule IDs: R-008 (error catch set + exit codes), R-009 (canonical JSON)
+- Gap IDs: G-005 (caught exception set)
+- Source evidence: source/legacy_adapter.py:40-52 (main)
+- Exclusive target paths: src/cli.py
+- Dependency state: depends_on U-CONFIG, U-API, U-EXEC (integration unit; runs last)
+- Authorization bundle SHA-256: 37280d4e00533ecedff4c5a89c76c3622176f53bc0e22652e30bfd62d7ae9589
+- Check-input declarations: tests/test_cli.py
+- Unit check: python3 -m unittest discover -s tests -p test_cli.py
+- Negative probe: tests/test_cli.py::test_negative_probe (valid plan must exit 0)
+- Model role: integration owner (orchestrator, Opus 4.8)
+- Risk: medium (wiring + argparse surface)

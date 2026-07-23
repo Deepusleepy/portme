@@ -1,0 +1,76 @@
+diff: 18/43 scenarios matched
+  MISMATCH J-01-plan-defaults
+    source: {'stdout': '{"data":{"a":1},"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u1"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":{"a":1},"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u1"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-02-plan-int-uid
+    source: {'stdout': '{"data":[1,2],"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"42"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":[1,2],"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"42"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-03-plan-config-file
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":5,"region":"us-east","timeoutMs":500},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":5,"timeoutMs":500},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-04-plan-env-over-file
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":5,"region":"us-east","timeoutMs":250},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":5,"timeoutMs":250},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-05-plan-cli-over-env-over-file
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":2,"region":"eu-west","timeoutMs":999},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":2,"timeoutMs":999},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-06-plan-env-only
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":777},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":3,"timeoutMs":777},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-07-plan-cli-region
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":3,"region":"eu-west","timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-08-plan-cli-retries0
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":1,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":1,"timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-09-plan-config-region
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":3,"region":"eu-west","timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-10-plan-strict-inert
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-11-plan-full-config
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":2,"region":"eu-west","timeoutMs":100},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":2,"timeoutMs":100},"subject":{"id":"u"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-25-uid-bool
+    source: {'stdout': '{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"True"}}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"True"}}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-27-run-200
+    source: {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-28-run-503-default
+    source: {'stdout': '{"attempts":3,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":3,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-29-run-503x2-then-200
+    source: {'stdout': '{"attempts":3,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":3,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-30-run-503-then-200
+    source: {'stdout': '{"attempts":2,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":2,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-31-run-500-upstream
+    source: {'stdout': '{"attempts":1,"error":"upstream","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":500}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":"upstream","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":500}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-32-run-404-upstream
+    source: {'stdout': '{"attempts":1,"error":"upstream","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":404}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":"upstream","ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":404}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-33-run-503-retries0
+    source: {'stdout': '{"attempts":1,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":1,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":1,"timeoutMs":1000},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-34-run-empty-seq
+    source: {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":200}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-36-run-503-retries4
+    source: {'stdout': '{"attempts":5,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":5,"region":"us-east","timeoutMs":500},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":5,"error":"temporary","ok":false,"request":{"data":1,"meta":{"maxAttempts":5,"timeoutMs":500},"subject":{"id":"u"}},"status":503}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-37-run-302-noerror
+    source: {'stdout': '{"attempts":1,"error":null,"ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":302}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":null,"ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":302}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-38-run-201-ok
+    source: {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":201}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":201}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-39-run-300-boundary
+    source: {'stdout': '{"attempts":1,"error":null,"ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":300}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":null,"ok":false,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":300}\n', 'stderr': '', 'exit': 0}
+  MISMATCH J-40-run-299-boundary
+    source: {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"region":"us-east","timeoutMs":1000},"subject":{"id":"u"}},"status":299}\n', 'stderr': '', 'exit': 0}
+    port:   {'stdout': '{"attempts":1,"error":null,"ok":true,"request":{"data":1,"meta":{"maxAttempts":3,"timeoutMs":1000},"subject":{"id":"u"}},"status":299}\n', 'stderr': '', 'exit': 0}

@@ -1,0 +1,107 @@
+{
+  "scenario_id": "J-013",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a1 done",
+              "checked": false,
+              "text": "a1"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a1\n",
+        "focus": "new-item",
+        "liveRegion": "Added a1"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 2,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a1 done",
+              "checked": false,
+              "text": "a1"
+            },
+            {
+              "ariaLabel": "Mark a2 done",
+              "checked": false,
+              "text": "a2"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[ ] a1\n[ ] a2\n",
+        "focus": "new-item",
+        "liveRegion": "Added a2"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "all",
+          "rows": [
+            {
+              "ariaLabel": "Mark a1 active",
+              "checked": true,
+              "text": "a1"
+            },
+            {
+              "ariaLabel": "Mark a2 done",
+              "checked": false,
+              "text": "a2"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[x] a1\n[ ] a2\n",
+        "focus": "task-0",
+        "liveRegion": "a1 completed"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 200,
+      "body": {
+        "dom": {
+          "count": 1,
+          "empty": null,
+          "filter": "active",
+          "rows": [
+            {
+              "ariaLabel": "Mark a2 done",
+              "checked": false,
+              "text": "a2"
+            }
+          ],
+          "theme": "light",
+          "title": "Pocket Tasks"
+        },
+        "export": "[x] a1\n[ ] a2\n",
+        "focus": "filter-active",
+        "liveRegion": "Showing active tasks"
+      }
+    }
+  ]
+}

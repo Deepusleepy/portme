@@ -1,0 +1,10 @@
+{
+  "tool": "pocketscan",
+  "tool_version": "1.0.0",
+  "ruleset_sha256": "9772277db2440aa756dfe689ade6c3e1253a9295214f6147cb304f88f96f22a9",
+  "scanned": [
+    "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/redacted"
+  ],
+  "finding_count": 0,
+  "findings": []
+}

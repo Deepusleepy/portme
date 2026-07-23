@@ -1,0 +1,31 @@
+$ notes list
+exit=0
+--stdout--
+1. a
+2. b
+--stderr--
+--end--
+$ notes add c
+exit=0
+--stdout--
+Added note 3.
+--stderr--
+--end--
+--file--
+           a  \n   b  \n   c  \n                                        
+
+$ notes list
+exit=0
+--stdout--
+1.   spaced  
+--stderr--
+--end--
+$ notes add tail
+exit=0
+--stdout--
+Added note 2.
+--stderr--
+--end--
+--file--
+                   s   p   a   c   e   d          \n   t   a   i   l  \n
+

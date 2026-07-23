@@ -1,0 +1,19 @@
+{
+  "scenario_id": "J-015",
+  "observations": [
+    {
+      "kind": "interact",
+      "status": 400,
+      "body": {
+        "error": "AttributeError"
+      }
+    },
+    {
+      "kind": "interact",
+      "status": 400,
+      "body": {
+        "error": "JSONDecodeError"
+      }
+    }
+  ]
+}

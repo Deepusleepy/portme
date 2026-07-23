@@ -1,0 +1,7 @@
+id	site	unobserved_behavior	evidence	inferred_target_behavior	confidence	user_decision
+G-001	src/pocket_tasks.py session store	session eviction / TTL / max sessions; behavior across server restart	only in-memory responses observed; no persistence probed	in-memory dict, no eviction, lost on restart	low	accepted (coverage limit; not in matrix)
+G-002	src/pocket_tasks.py POST body	truly empty POST body and non-UTF-8 bodies	not probed within matrix; empty body would json.loads("")->JSONDecodeError	empty body -> 400 JSONDecodeError (naive impl inference)	low	accepted as inference; A-002
+G-003	src/pocket_tasks.py error contract	whether source uses HTTP 400 for ALL exception classes or only these three	observed 400 for ValueError/AttributeError/JSONDecodeError	catch (ValueError,AttributeError,TypeError)->400 name; else would 500	medium	accepted; reproduced observed cases only
+A-001	add text	unicode normalization / max length of task text	only .strip() trimming observed on "  Spaced  "	Python str.strip() semantics, no length cap	medium	confirmed (matches observed)
+A-002	POST /interact	empty body semantics	unobserved	400 JSONDecodeError	low	confirmed as inference (outside matrix)
+A-003	concurrency	simultaneous requests to one session	single-threaded probing only	ThreadingHTTPServer; last-writer-wins on shared dict	low	confirmed as inference; not contracted

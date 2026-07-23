@@ -1,0 +1,518 @@
+{
+  "J-01-plan-defaults": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":{\"a\":1},\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u1\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":{\"a\":1},\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u1\"}}\n"
+    }
+  },
+  "J-02-plan-int-uid": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":[1,2],\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"42\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":[1,2],\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"42\"}}\n"
+    }
+  },
+  "J-03-plan-config-file": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":5,\"region\":\"us-east\",\"timeoutMs\":500},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":5,\"region\":\"us-east\",\"timeoutMs\":500},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-04-plan-env-over-file": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":5,\"region\":\"us-east\",\"timeoutMs\":250},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":5,\"region\":\"us-east\",\"timeoutMs\":250},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-05-plan-cli-over-env-over-file": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":2,\"region\":\"eu-west\",\"timeoutMs\":999},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":2,\"region\":\"eu-west\",\"timeoutMs\":999},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-06-plan-env-only": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":777},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":777},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-07-plan-cli-region": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"eu-west\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"eu-west\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-08-plan-cli-retries0": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":1,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":1,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-09-plan-config-region": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"eu-west\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"eu-west\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-10-plan-strict-inert": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-11-plan-full-config": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":2,\"region\":\"eu-west\",\"timeoutMs\":100},\"subject\":{\"id\":\"u\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":2,\"region\":\"eu-west\",\"timeoutMs\":100},\"subject\":{\"id\":\"u\"}}\n"
+    }
+  },
+  "J-12-unknown-keys": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: unknown config keys: bar, foo\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: unknown config keys: bar, foo\n",
+      "stdout": ""
+    }
+  },
+  "J-13-timeout-zero-config": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: timeout_ms must be positive\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: timeout_ms must be positive\n",
+      "stdout": ""
+    }
+  },
+  "J-14-timeout-neg-cli": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: timeout_ms must be positive\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: timeout_ms must be positive\n",
+      "stdout": ""
+    }
+  },
+  "J-15-retries-hi-config": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: retries must be between 0 and 5\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: retries must be between 0 and 5\n",
+      "stdout": ""
+    }
+  },
+  "J-16-retries-hi-cli": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: retries must be between 0 and 5\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: retries must be between 0 and 5\n",
+      "stdout": ""
+    }
+  },
+  "J-17-region-bad-config": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: unsupported region\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: unsupported region\n",
+      "stdout": ""
+    }
+  },
+  "J-18-region-bad-cli": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: unsupported region\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: unsupported region\n",
+      "stdout": ""
+    }
+  },
+  "J-19-env-not-int": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: invalid literal for int() with base 10: 'abc'\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: invalid literal for int() with base 10: 'abc'\n",
+      "stdout": ""
+    }
+  },
+  "J-20-config-missing-file": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: [Errno 2] No such file or directory: '/private/tmp/portme-dogfoods/api-target/.port/judge/fixtures/does-not-exist.json'\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: [Errno 2] No such file or directory: '/private/tmp/portme-dogfoods/api-target/.port/judge/fixtures/does-not-exist.json'\n",
+      "stdout": ""
+    }
+  },
+  "J-21-config-bad-json": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)\n",
+      "stdout": ""
+    }
+  },
+  "J-22-request-extra-key": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: request must contain only user_id and payload\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: request must contain only user_id and payload\n",
+      "stdout": ""
+    }
+  },
+  "J-23-request-missing-key": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: request must contain only user_id and payload\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: request must contain only user_id and payload\n",
+      "stdout": ""
+    }
+  },
+  "J-24-uid-list": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: user_id must be string or integer\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: user_id must be string or integer\n",
+      "stdout": ""
+    }
+  },
+  "J-25-uid-bool": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"True\"}}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"True\"}}\n"
+    }
+  },
+  "J-26-request-bad-json": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n",
+      "stdout": ""
+    }
+  },
+  "J-27-run-200": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    }
+  },
+  "J-28-run-503-default": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":3,\"error\":\"temporary\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":503}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":3,\"error\":\"temporary\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":503}\n"
+    }
+  },
+  "J-29-run-503x2-then-200": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":3,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":3,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    }
+  },
+  "J-30-run-503-then-200": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":2,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":2,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    }
+  },
+  "J-31-run-500-upstream": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":\"upstream\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":500}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":\"upstream\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":500}\n"
+    }
+  },
+  "J-32-run-404-upstream": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":\"upstream\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":404}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":\"upstream\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":404}\n"
+    }
+  },
+  "J-33-run-503-retries0": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":\"temporary\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":1,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":503}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":\"temporary\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":1,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":503}\n"
+    }
+  },
+  "J-34-run-empty-seq": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":200}\n"
+    }
+  },
+  "J-35-run-bad-seq": {
+    "port": {
+      "exit": 2,
+      "stderr": "error: invalid literal for int() with base 10: 'abc'\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "error: invalid literal for int() with base 10: 'abc'\n",
+      "stdout": ""
+    }
+  },
+  "J-36-run-503-retries4": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":5,\"error\":\"temporary\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":5,\"region\":\"us-east\",\"timeoutMs\":500},\"subject\":{\"id\":\"u\"}},\"status\":503}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":5,\"error\":\"temporary\",\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":5,\"region\":\"us-east\",\"timeoutMs\":500},\"subject\":{\"id\":\"u\"}},\"status\":503}\n"
+    }
+  },
+  "J-37-run-302-noerror": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":302}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":302}\n"
+    }
+  },
+  "J-38-run-201-ok": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":201}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":201}\n"
+    }
+  },
+  "J-39-run-300-boundary": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":300}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":false,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":300}\n"
+    }
+  },
+  "J-40-run-299-boundary": {
+    "port": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":299}\n"
+    },
+    "source": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "{\"attempts\":1,\"error\":null,\"ok\":true,\"request\":{\"data\":1,\"meta\":{\"maxAttempts\":3,\"region\":\"us-east\",\"timeoutMs\":1000},\"subject\":{\"id\":\"u\"}},\"status\":299}\n"
+    }
+  },
+  "J-41-missing-request": {
+    "port": {
+      "exit": 2,
+      "stderr": "usage: legacy-adapter [-h] [--config CONFIG] --request REQUEST\n                      [--timeout-ms TIMEOUT_MS] [--retries RETRIES]\n                      [--region REGION] [--sequence SEQUENCE]\n                      {plan,run}\nlegacy-adapter: error: the following arguments are required: --request\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "usage: legacy-adapter [-h] [--config CONFIG] --request REQUEST\n                      [--timeout-ms TIMEOUT_MS] [--retries RETRIES]\n                      [--region REGION] [--sequence SEQUENCE]\n                      {plan,run}\nlegacy-adapter: error: the following arguments are required: --request\n",
+      "stdout": ""
+    }
+  },
+  "J-42-bad-command": {
+    "port": {
+      "exit": 2,
+      "stderr": "usage: legacy-adapter [-h] [--config CONFIG] --request REQUEST\n                      [--timeout-ms TIMEOUT_MS] [--retries RETRIES]\n                      [--region REGION] [--sequence SEQUENCE]\n                      {plan,run}\nlegacy-adapter: error: argument command: invalid choice: 'frobnicate' (choose from 'plan', 'run')\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "usage: legacy-adapter [-h] [--config CONFIG] --request REQUEST\n                      [--timeout-ms TIMEOUT_MS] [--retries RETRIES]\n                      [--region REGION] [--sequence SEQUENCE]\n                      {plan,run}\nlegacy-adapter: error: argument command: invalid choice: 'frobnicate' (choose from 'plan', 'run')\n",
+      "stdout": ""
+    }
+  },
+  "J-43-missing-command": {
+    "port": {
+      "exit": 2,
+      "stderr": "usage: legacy-adapter [-h] [--config CONFIG] --request REQUEST\n                      [--timeout-ms TIMEOUT_MS] [--retries RETRIES]\n                      [--region REGION] [--sequence SEQUENCE]\n                      {plan,run}\nlegacy-adapter: error: the following arguments are required: command\n",
+      "stdout": ""
+    },
+    "source": {
+      "exit": 2,
+      "stderr": "usage: legacy-adapter [-h] [--config CONFIG] --request REQUEST\n                      [--timeout-ms TIMEOUT_MS] [--retries RETRIES]\n                      [--region REGION] [--sequence SEQUENCE]\n                      {plan,run}\nlegacy-adapter: error: the following arguments are required: command\n",
+      "stdout": ""
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "tool": "pocketscan",
+  "tool_version": "1.0.0",
+  "ruleset_sha256": "9772277db2440aa756dfe689ade6c3e1253a9295214f6147cb304f88f96f22a9",
+  "scanned": [
+    "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw"
+  ],
+  "finding_count": 8,
+  "findings": [
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 14,
+      "rule": "aws-access-key-id",
+      "match_sha256": "1a5d44a2dca19669"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 14,
+      "rule": "email",
+      "match_sha256": "58a95c78e3beee83"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 16,
+      "rule": "aws-access-key-id",
+      "match_sha256": "1a5d44a2dca19669"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 16,
+      "rule": "email",
+      "match_sha256": "58a95c78e3beee83"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 22,
+      "rule": "aws-access-key-id",
+      "match_sha256": "1a5d44a2dca19669"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 22,
+      "rule": "email",
+      "match_sha256": "58a95c78e3beee83"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 24,
+      "rule": "aws-access-key-id",
+      "match_sha256": "1a5d44a2dca19669"
+    },
+    {
+      "file": "REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki/raw/J-PII.json",
+      "line": 24,
+      "rule": "email",
+      "match_sha256": "58a95c78e3beee83"
+    }
+  ]
+}
