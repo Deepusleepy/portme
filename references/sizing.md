@@ -39,7 +39,7 @@ Choose **Large-scale** for totals 9–12, more than 15 repeatable units, paralle
 Raise the mode when uncertainty is material. Lower it only with concrete evidence and user agreement.
 Quick also requires every included surface to fit an acceptance checklist with setup, action, observable result, and retained evidence. A missing or weakly judged high-risk surface upgrades the port to Standard.
 
-For a whole-codebase language migration, additionally force three committed calls before the mode binds, each backed by paths or counts: structure-preserving or redesign; the measured cost of one full build/typecheck run; and whether the existing test suite hits the public surface (survives as the judge) or imports internals (dies with the language—a judge must be built).
+For a whole-codebase language migration, additionally force three committed calls before the mode binds, each backed by paths or counts: structure-preserving or redesign; the measured cost of one full build/typecheck run; and whether the existing test suite hits the public surface (survives as the judge) or imports internals (dies with the language, so a judge must be built).
 
 Passive inspection cannot supply the measured build. At the initial combined scope proposal, name one exact baseline command, source revision, expected outputs, timeout, and a disposable credential-free container/worktree/snapshot with network and external writes disabled where practical. Ask the user to authorize that command specifically. Do not run an installer, lifecycle hook, build, or test until they do. Capture the command and result, verify the source/target remained unchanged, then finalize the sizing verdict; if measurement changes the score or mode, present the revised decomposition for approval rather than silently binding the provisional mode.
 
@@ -49,14 +49,14 @@ Before binding the mode, state the present pain, the expected measurable benefit
 
 ## Consider the two escape verdicts
 
-Return **no process needed — just implement it** only when all are true:
+Return **no process needed: just implement it** only when all are true:
 
 - One obvious edit has no semantic uncertainty.
 - An existing test exercises the exact public behavior.
 - The change is low-blast-radius and cheap to reverse.
 - The target needs no new architecture or compatibility decision.
 
-Return **don’t port — write fresh / use a library** when any applies:
+Return **don’t port: write fresh / use a library** when any applies:
 
 - The desired behavior is small, but preserving a tangled or inaccessible source adds needless uncertainty.
 - A maintained library already satisfies the confirmed contract.
@@ -68,7 +68,7 @@ State the applicable criterion and cite the exact existing test, observed behavi
 
 ## Choose the model plan
 
-At the sizing gate, ask the user to choose model tiers for implementers, reviewers, and rule-writers. Include this named line: `Model plan — current model for implementers, reviewers, and rule-writers (default); constraints: <none or cannot switch>.`
+At the sizing gate, ask the user to choose model tiers for implementers, reviewers, and rule-writers. Include this named line: `Model plan: current model for implementers, reviewers, and rule-writers (default); constraints: <none or cannot switch>.`
 Explain the blast-radius tradeoff: rule-writers and reviewers shape many downstream units, while implementers are bounded by review and referees.
 Record the decision in `.port/status.md` and the sizing row of `.port/cost-log.tsv`.
 The approved model plan binds Phase 1 rule authorship, Phase 2 review, and Phase 3 fan-out until the user changes it at a later gate.
@@ -78,7 +78,7 @@ For Quick work without separate roles, record the single chosen tier or note tha
 ## Estimate size at the gate
 
 Count units from the confirmed manifest sketch; line count is not a proxy for independent review work.
-For **Quick** and **Standard**, report a qualitative size band—**small**, **medium**, or **large**—plus a rough calendar range and the main serialized cost driver.
+For **Quick** and **Standard**, report a qualitative size band, **small**, **medium**, or **large**, plus a rough calendar range and the main serialized cost driver.
 Do not forecast numeric tokens at sizing for Quick or Standard. For Large-scale, use a numeric range only when measured units from the same pipeline already exist; otherwise defer it. Keep the sizing flow to the band, calendar range, serialized cost driver, and evidence quality.
 
 ## Present the sizing gate
@@ -90,11 +90,11 @@ In **Standard** and **Large-scale**, approval starts Phase 0, whose evidence end
 
 ## By mode
 
-**Quick — one plan gate and one result gate.** Use one unit list, a small/medium/large band, rough calendar, a chosen model tier, and no stops between phases. The judge may be the acceptance checklist.
-**Standard — per-phase gates.** Score every factor, choose all three role tiers, estimate sampled review qualitatively at sizing, then replace that estimate with measured numeric cost after Phase 2.
-**Large-scale — per-phase gates with orchestration detail.** Add rate limits, batch-size assumptions, serialized-referee time, and evidence-backed numeric ranges when available.
+**Quick: one plan gate and one result gate.** Use one unit list, a small/medium/large band, rough calendar, a chosen model tier, and no stops between phases. The judge may be the acceptance checklist.
+**Standard: per-phase gates.** Score every factor, choose all three role tiers, estimate sampled review qualitatively at sizing, then replace that estimate with measured numeric cost after Phase 2.
+**Large-scale: per-phase gates with orchestration detail.** Add rate limits, batch-size assumptions, serialized-referee time, and evidence-backed numeric ranges when available.
 
-## After Phase 2 only — forecast cost
+## After Phase 2 only: forecast cost
 
 Once Phase 2 supplies measured per-unit implementation, review, rework, and referee costs, forecast with their range, review topology, fixed overhead, rate limits, and serialized-referee time. Convert tokens to money only from prices for the approved model plan. Append estimates and actuals to `.port/cost-log.tsv`:
 

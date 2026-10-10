@@ -9,5 +9,5 @@
 - Check-input declarations: tests/test_translate.py,tests/_bootstrap.py
 - Unit check: python3 -m unittest discover -s tests -p test_translate.py
 - Negative probe: tests/test_translate.py::test_negative_probe (region must stay in meta)
-- Model role: implementer (Opus 4.8); serial degrade
+- Model role: implementer (Opus 4.8); one unit at a time
 - Risk: high (defines the v2 envelope shape)

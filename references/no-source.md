@@ -4,7 +4,7 @@
 
 **Functional-replication fast path.** Proceed when the requested work is generic functional UX replication and excludes branding, assets, trade dress, paywalled content, access-control circumvention, and third-party private data.
 Note that basis, the authorized account/environment, and the excluded material in `.port/status.md`; no separate mandatory stop is required for this path.
-The fast path still requires a recorded authorization basis: whose account, what the user's relationship to the source is, and — when observation is automated (scripted driving, HAR capture, scraping) — whether the service's terms permit it as far as the user knows. Unknown terms are uncertainty, and uncertainty routes to the protected-case stop, not the fast path.
+The fast path still requires a recorded authorization basis: whose account, what the user's relationship to the source is, and (when observation is automated (scripted driving, HAR capture, scraping)) whether the service's terms permit it as far as the user knows. Unknown terms are uncertainty, and uncertainty routes to the protected-case stop, not the fast path.
 
 **Protected-case stop.** Stop before sizing when the plan may reproduce protected expression or material, bypass controls, use another person’s private data, or conflict with terms, license limits, contracts, account permissions, or applicable law.
 Ask the user to resolve the exact concern. Their clearance is scope evidence, not jurisdiction-specific legal advice.
@@ -19,7 +19,7 @@ Set redaction, retention, and deletion rules before evidence is produced.
 ## Ask whether parity is necessary
 
 Before any observation plan, ask whether the user needs behavior parity or merely comparable features.
-If comparable features suffice, return **don’t port — write fresh / use a library**, record the escape verdict, and skip the entire probe-and-capture pipeline.
+If comparable features suffice, return **don’t port: write fresh / use a library**, record the escape verdict, and skip the entire probe-and-capture pipeline.
 Continue only when source-specific behavior is part of the confirmed contract.
 
 ## Bound the parity claim
@@ -102,7 +102,7 @@ After admission, delete the quarantine according to the approved retention rule,
 Use this receipt shape:
 
 ```markdown
-## Capture receipt — <ID>
+## Capture receipt: <ID>
 - Authorization: <actual conversation message>; account/environment: <named>
 - Quarantine: <resolved outside-repo path>; mode: 0700; non-symlink: yes
 - Inventory: <regular files/dirs only receipt>; rejected entries: <none/list>
@@ -133,7 +133,7 @@ J-001	S-001	macOS;en-IN;paid	fresh document	click save	toast;export	fixtures/J-0
 
 Write one assumption per unknown behavior with evidence, confidence, target behavior, and user decision.
 Confirm high-blast-radius assumptions before Phase 2.
-Place site-specific unknowns in `.port/gaps.tsv` and mark affected code with `TODO(port): unobserved source behavior — <assumption ID>`.
+Place site-specific unknowns in `.port/gaps.tsv` and mark affected code with `TODO(port): unobserved source behavior (<assumption ID>)`.
 Approved intentional differences enter `.port/accepted-divergences.tsv`.
 
 ```markdown
@@ -157,6 +157,6 @@ Quick records intermediate evidence without stopping; Standard and Large-scale s
 
 ## By mode
 
-**Quick — two gates.** Approve the narrow observation/acceptance plan at the plan gate, then run without stops and present bounded results at the result gate.
-**Standard — risk-focused observation.** Cover confirmed surfaces with proportionate edge probes and user-approved assumptions; use human acceptance only as a documented coverage limit where automation cannot work.
-**Large-scale — systematic evidence.** Require redacted capture pipelines, stable scenario IDs, independent judge review, an environment matrix, and staged cutover.
+**Quick: two gates.** Approve the narrow observation/acceptance plan at the plan gate, then run without stops and present bounded results at the result gate.
+**Standard: risk-focused observation.** Cover confirmed surfaces with proportionate edge probes and user-approved assumptions; use human acceptance only as a documented coverage limit where automation cannot work.
+**Large-scale: systematic evidence.** Require redacted capture pipelines, stable scenario IDs, independent judge review, an environment matrix, and staged cutover.

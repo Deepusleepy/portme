@@ -36,10 +36,10 @@ Do not add empty categories. A frontend-only port may have no API surface.
 
 Choose exactly one standard per surface:
 
-- **exact** — bytes, codes, ordering, or messages that consumers observe directly.
-- **normalized** — named instability such as approved timestamps or generated IDs may differ.
-- **invariant** — several outputs are valid, but stated properties must hold.
-- **intentionally-divergent** — the user approved a different target behavior and its rationale.
+- **exact**: bytes, codes, ordering, or messages that consumers observe directly.
+- **normalized**: named instability such as approved timestamps or generated IDs may differ.
+- **invariant**: several outputs are valid, but stated properties must hold.
+- **intentionally-divergent**: the user approved a different target behavior and its rationale.
 
 Put the normalization algorithm or invariant beside the surface.
 When an **exact** surface contracts raw bytes, structural or parsed equality is
@@ -127,6 +127,6 @@ In Quick, the contract and acceptance checklist belong to the sizing plan gate; 
 
 ## By mode
 
-**Quick — short contract at the plan gate.** Keep applicable surfaces and a concise ledger; use an acceptance checklist and do not introduce a Phase 0 gate.
-**Standard — complete included behavior.** Cover all included surfaces, non-functional risks, assumptions, and explicit coverage limits.
-**Large-scale — stable machine joins.** Assign stable IDs everywhere and require machine-readable divergence tracking across workers and gates.
+**Quick: short contract at the plan gate.** Keep applicable surfaces and a concise ledger; use an acceptance checklist and do not introduce a Phase 0 gate.
+**Standard: complete included behavior.** Cover all included surfaces, non-functional risks, assumptions, and explicit coverage limits.
+**Large-scale: stable machine joins.** Assign stable IDs everywhere and require machine-readable divergence tracking across workers and gates.

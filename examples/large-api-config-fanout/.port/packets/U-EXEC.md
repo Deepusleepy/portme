@@ -9,5 +9,5 @@
 - Check-input declarations: tests/test_execute.py,tests/_bootstrap.py
 - Unit check: python3 -m unittest discover -s tests -p test_execute.py
 - Negative probe: tests/test_execute.py::test_negative_probe (200 must not be an error)
-- Model role: implementer (Opus 4.8); serial degrade
+- Model role: implementer (Opus 4.8); one unit at a time
 - Risk: high (retry semantics; 503-only)

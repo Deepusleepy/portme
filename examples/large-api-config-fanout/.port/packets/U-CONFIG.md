@@ -9,5 +9,5 @@
 - Check-input declarations: tests/test_config.py,tests/_bootstrap.py
 - Unit check: python3 -m unittest discover -s tests -p test_config.py
 - Negative probe: tests/test_config.py::test_negative_probe (defaults must not silently be wrong)
-- Model role: implementer (Opus 4.8); serial degrade — see status.md constraint
+- Model role: implementer (Opus 4.8); one unit at a time, see status.md constraint
 - Risk: high (defines config precedence for all downstream units)

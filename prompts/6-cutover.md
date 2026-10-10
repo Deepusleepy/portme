@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/cutover.md. -->
-# Phase 6 — Cut over
+# Phase 6: Cut over
 
 **Prerequisites.** Phase 5 approval and exact rollout authorization matched to actual conversation messages; drift policy; rollback owner and access.
 **Inputs.** Release artifact, judge canaries, marker ledger, divergences, `templates/cutover-plan.md`, live signals and retirement checklist.

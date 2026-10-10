@@ -89,7 +89,7 @@ Before fan-out, test each direct command plus wrappers, aliases, task runners, a
 Keep a receipt like:
 
 ```markdown
-## Deny preflight — build referee
+## Deny preflight: build referee
 - Configuration: .claude/settings.json @ <digest>
 - Scope: accidental invocation only; not a security boundary
 - Direct probe: `npm test -- --help` → denied; raw: .port/receipts/deny-npm-direct.txt

@@ -1,6 +1,6 @@
 # Port status
-- Mode: Large-scale (user-requested override on a small fixture; recorded honestly — see Sizing)
-- Active phase: 6 — Cut over / rollout-active (retirement-pending; disposable dogfood)
+- Mode: Large-scale (user-requested override on a small fixture; recorded honestly, see Sizing)
+- Active phase: 6. Cut over / rollout-active (retirement-pending; disposable dogfood)
 - Phase state: complete (all objective phase gates green under harness preauthorization)
 - Gate log:
   - sizing | 2026-07-23 | approver=harness preauthorization (disposable): Large-scale override + model plan
@@ -24,7 +24,7 @@
   manifest source scopes were rebased to bundled `source/legacy_adapter.py`. It
   proves the shipped bundle's integrity; it is not user approval for another run.
 - Baseline command authorization: not-applicable (no build/typecheck baseline needed; stdlib only)
-- Next concrete action: none — run complete; old path retained for rollback (disposable)
+- Next concrete action: none, run complete; old path retained for rollback (disposable)
 - Artifact index:
   - source: source/legacy_adapter.py @ sha256 bb35f057aeefb98ef12a0d2e8fcb03fc03c009eaf59f71e7b3a9a59701af7457
   - port src: src/{config,translate,execute,cli}.py
@@ -38,7 +38,7 @@
   - cutover: .port/cutover-plan.md; divergences: .port/accepted-divergences.tsv (empty)
 - Blockers: none
 
-## Post-run fan-out transport addendum — parent harness
+## Post-run fan-out transport addendum: parent harness
 - Purpose: close the original orchestrator's disclosed no-Agent concurrency gap without rewriting the historical run.
 - Reopened units: U-CONFIG owner=Opus-worker-config (`src/config.py` only); U-EXEC owner=Opus-worker-exec (`src/execute.py` only).
 - Baselines: `.port/evidence/fanout-baseline-config.py`, `.port/evidence/fanout-baseline-execute.py`.
@@ -69,13 +69,13 @@ UP to Large-scale and that override is recorded rather than hidden.
 - Arithmetic: 2/12 → intrinsic Quick. Override: user-requested Large-scale (dogfooding fan-out,
   API-version, and config-system control paths). Honest note: process is deliberately heavier than
   the fixture warrants; this is the requested exercise, not a sizing recommendation.
-- Model plan — current model (Opus 4.8) for implementers, reviewers, and rule-writers (default).
+- Model plan: current model (Opus 4.8) for implementers, reviewers, and rule-writers (default).
   The original orchestrator could not switch tiers or spawn agents and kept roles
   separate serially; the later parent addendum used two real concurrent workers.
 
 ## Recorded constraints (honest original-run degradation)
 - No Agent/Task subagent-spawn transport was exposed to the original orchestrator. Per SKILL.md rule 8 and
-  references/loops.md ("when none exists, run the same loop serially — the process degrades
+  references/loops.md ("when none exists, run the same loop serially, the process degrades
   gracefully, the roles don't change"), fan-out and independent review were executed as a
   serialized loop with preserved role separation, disjoint owned paths, read-only review passes,
   and full disk evidence. Real concurrency was NOT achieved in that original phase and this
@@ -87,14 +87,14 @@ UP to Large-scale and that override is recorded rather than hidden.
   accidental invocation, not a security boundary: a worker could still call full_referee.sh
   directly. Genuine isolation would require separate credentials + container/process policy.
 
-## Phase 0 — Judge first
+## Phase 0: Judge first
 - Oracle: rung 3 differential harness (.port/judge/compare.py), 43 scenarios, exact stdout+stderr+exit.
 - Baseline: 43 source observations captured (.port/judge/results/source-baseline.json).
 - Two-way validation: 5 mutations on distinct comparator classes, all caught (M1 18/43, M2 40/43,
   M3 42/43, M4 42/43, M5 28/43). Mutations applied only in disposable mktemp copies.
 - Source integrity: src set digest f23196f9… identical before and after mutation testing.
 
-## Phase 1 — Map and rules
+## Phase 1: Map and rules
 - Artifacts: behavior-map.tsv (7 edges), gaps.tsv (5 closed), rulebook.md (9 rules), manifest (4 units).
 - Contract↔manifest join: S-001..S-005 all covered, 0 uncovered, 0 orphaned.
 - Authorization bundle SHA-256: 7fa1c825ff13f6b8598e6f4d3122c6e599c516658cf6f55085f5f7b1543d443a.
@@ -104,13 +104,13 @@ UP to Large-scale and that override is recorded rather than hidden.
 - Fixture provenance (sha256): base 2e291d9f, region aca22356, strict 017708ed, full 3331ce6d,
   unknown b7072030, badregion ca4e4fd8, badtimeout 49e5f3ec, badretries 4e85a3cd, badjson a216e309.
 
-## Phase 2 — Stress-test the rules
+## Phase 2: Stress-test the rules
 - Slice: U-CONFIG (highest-risk gap: precedence + inert strict). Slice share of this port is large
   (one of four tiny units) → KEEP-IN-PLACE verdict per stress-test.md (disposal only pays with a
   fan-out to protect). Reviewed output retained; 0 rule amendments surfaced. No disposable output
   can close a manifest row (nothing was discarded).
 
-## Phase 3 — Port everything
+## Phase 3: Port everything
 - Manifest: 4 total / 4 done / 0 pending / 0 blocked / 0 failed-check (under authorized digest).
 - Ownership: disjoint target paths (config.py, translate.py, execute.py, cli.py); U-CLI serialized last.
 - Original serial review: 2 independent adversarial read-only passes per high-risk unit
@@ -127,21 +127,21 @@ UP to Large-scale and that override is recorded rather than hidden.
 - Markers: 0 TODO/FIXME/XXX/HACK/BUG(port)/PERF(port)/SAFETY(port).
 - Drift policy: FREEZE (source pinned and idle).
 
-## Phase 4 — Mechanical checks / serialized referee
+## Phase 4: Mechanical checks / serialized referee
 - Referee: full_referee.sh (35 unittest + py_compile src/*.py) via referee_runner.py, serialized.
 - Lock contention: A held lock (result 0001, exit 0); B (no --wait) denied "referee lock is held
   (live pid)" exit 2; C (--wait) blocked then ran (result 0002, exit 0). Real OS serialization.
 - last: .port/referee/0002 exit 0, cryptographically verified (file set, sha256, 0444/0555 modes,
   COMPLETE marker, exit consistency). Tamper drill: mutated copy rejected ("mode is not 0555").
 
-## Phase 5 — Run and match
+## Phase 5: Run and match
 - Smoke: 3/3 (plan ok exit 0, run retry exit 0, bad region error exit 2).
 - Port judge: 43/43; introduced failures: 0.
 - Source baseline suite: 43/43 (differential); approved pre-existing failures: 0; unapproved: 0.
 - Inherited failures: 0. Approved divergences: 0. Non-functional referees: 2/2 (zero-dep, deterministic).
 - Skipped/bounded coverage: none. Tool/environment exceptions: none.
 
-## Phase 6 — Cut over
+## Phase 6: Cut over
 - Marker ledger: empty (0 unresolved). Drift: FREEZE. Strategy: direct swap, instant rollback.
 - Pre-cutover canary: judge 43/43 + referee 0002 verified. Rollback receipt: source retained @
   bb35f057…, rollback drill re-ran source standalone (exit 0). Rollout state: retirement-pending

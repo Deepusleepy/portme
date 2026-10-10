@@ -4,7 +4,7 @@ Drive Phase 3 from `.port/manifest.tsv`, but never trust it merely because it ex
 Keep `.port/rulebook.md` read-only inside the loop; proposed amendments wait for a gate between batches.
 In Quick mode there is no manifest or rulebook: track the handful of units as
 a checklist in `.port/status.md` and run the same implement-then-verify loop
-serially — the disk-truth rule still applies, the machinery doesn't.
+serially. The disk-truth rule still applies. The machinery doesn't.
 
 ## Compute queue state
 
@@ -28,7 +28,7 @@ Use the canonical header defined in `SKILL.md`. A missing prerequisite artifact,
 Append a phase receipt below the canonical header:
 
 ```markdown
-## Phase 3 — Port everything
+## Phase 3: Port everything
 - Manifest: 24 total / 11 done / 10 pending / 2 blocked / 1 failed-check
 - Batch: 4 of 6; units U-012,U-013,U-014
 - Referees: 10 cheap checks passed / 1 failed
@@ -41,8 +41,8 @@ Append a phase receipt below the canonical header:
 ## Guard referee placement before fan-out
 
 Instructions alone do not reliably prevent accidental expensive-referee calls. Encode an accidental-invocation guardrail in the active harness configuration before any Phase 3 fan-out.
-For Claude Code, place explicit permission denies for the expensive commands in `.claude/settings.json` — start from `templates/settings-denies.json`, keep only the classes this port needs, and add the wrappers Phase 2 found; use the equivalent mechanical deny in another harness.
-**Any edit to the user's permission configuration requires the user's explicit approval first** — present the proposed deny list as a diff and wait; an agent never grants itself permission changes.
+For Claude Code, place explicit permission denies for the expensive commands in `.claude/settings.json`, start from `templates/settings-denies.json`, keep only the classes this port needs, and add the wrappers Phase 2 found; use the equivalent mechanical deny in another harness.
+**Any edit to the user's permission configuration requires the user's explicit approval first.** Present the proposed deny list as a diff and wait. An agent never grants itself permission changes.
 Cover direct commands, wrappers, aliases, task runners, absolute executable paths, and common alternate invocations identified during Phase 2. These denies are not a security boundary. For hostile source execution or genuine isolation, use separate credentials and a credential-free container/process policy with restricted network and filesystem access.
 
 **Live preflight is mandatory.** From a worker-equivalent context, attempt a harmless denied invocation for every named expensive-referee class and retain each raw denial receipt under `.port/`; use the concrete receipt format in `references/execution-trust.md`.
@@ -93,7 +93,7 @@ Recompute completion from disk after every fix.
 
 ## Escalate recurring failures
 
-Fingerprint identity is `rule ID + symptom class`; near-duplicates default to the same fingerprint, and the independent tiebreaker—not the implementer or judge author—owns splits and merges. Fix and record the first two confirmed instances.
+Fingerprint identity is `rule ID + symptom class`; near-duplicates default to the same fingerprint, and the independent tiebreaker, not the implementer or judge author, owns splits and merges. Fix and record the first two confirmed instances.
 On the third instance, open a named mid-phase exception gate and pause only the affected slice. Escalate to a rulebook, map, or judge amendment only when evidence shows that shared artifact is defective.
 Identify every unit produced under the faulty rule and ask the user to approve amendment plus regeneration.
 Apply approved amendments, record the exception-gate sign-off, resume the phase, then regenerate affected units through the full loop. Environment flakiness or a localized implementation defect receives a bounded reviewed fix instead of a shared amendment. An irreducible tool or environment error may receive a user-approved exception with its own count and affected IDs; it remains an exception, never a pass.
@@ -108,8 +108,8 @@ One serialized runner owns each minutes-expensive, rate-limited, stateful, or wo
 Workers may create patches and are instructed and guarded from direct referee invocation; the deny reduces accidents but does not prove impossibility.
 Tool choice is transport: Claude Code Agent/Task fan-out, a Workflow, another queue executor, or a serial loop keeps the same ownership and evidence rules.
 
-**Liveness.** Every fan-out defines, before launch, what worker progress looks like (rows appended, files written, queue rows closed) and a stall threshold — no observable progress for that long means the worker is dead, not slow (a few minutes for classifier shards; one unit's expected duration for implementers).
-A dead worker's ownership is reclaimed explicitly: record the reclaim in `.port/status.md`, recover whatever partial shard or unit output exists on disk, and requeue the remainder under a new owner — the same unit is never active under two owners, so reclaim must precede relaunch.
+**Liveness.** Every fan-out defines, before launch, what worker progress looks like (rows appended, files written, queue rows closed) and a stall threshold. No observable progress for that long means the worker is dead, not slow (a few minutes for classifier shards; one unit's expected duration for implementers).
+A dead worker's ownership is reclaimed explicitly: record the reclaim in `.port/status.md`, recover whatever partial shard or unit output exists on disk, and requeue the remainder under a new owner. The same unit is never active under two owners, so reclaim must precede relaunch.
 Re-dispatched work keeps its original unit and shard IDs so receipts stay joinable.
 
 ## Maintain marker and cost ledgers
@@ -126,7 +126,7 @@ signature/adapter boundary also requires its declared consumer-path probe or
 dependent integration check to pass; a direct leaf-only green result is not
 done. A blocked unit passes the gate only when listed with reason, contract
 impact, next owner, and explicit user-approved deferral.
-Audit the Phase 2 keep/discard verdict and prove no disposable output closed a row. Record the drift policy now—freeze, mirror, or re-baseline—rather than deferring the choice to Phase 6.
+Audit the Phase 2 keep/discard verdict and prove no disposable output closed a row. Record the drift policy now (freeze, mirror, or re-baseline) rather than deferring the choice to Phase 6.
 Report queue counts, review coverage and stated sampling minimum, skip counts by reason code, disputed and not-confirmed findings, blocked deferrals, recurring-rule amendments and exception gates, markers, drift policy, cost, and Phase 4 forecast.
 List expensive checks deferred to Phase 4 and include the live-deny receipt.
 In Standard and Large-scale, stop for explicit approval before Phase 4.
@@ -134,6 +134,6 @@ In Quick, record the same applicable evidence and continue to verification witho
 
 ## By mode
 
-**Quick — uninterrupted single loop.** One implementer, no fan-out or standalone rulebook, acceptance-checklist judge, and no Phase 3 gate stop; only the plan and result gates exist.
-**Standard — small controlled batches.** Use risk-sampled independent review; before any fan-out, configure and live-test denies for expensive referees.
-**Large-scale — controlled fan-out.** Use disk queues, two reviewers per unit, tiebreakers, approved model tiers, serialized shared resources, and live deny-guardrail receipts as a gate prerequisite; add real process/container isolation when containment is required.
+**Quick: uninterrupted single loop.** One implementer, no fan-out or standalone rulebook, acceptance-checklist judge, and no Phase 3 gate stop; only the plan and result gates exist.
+**Standard: small controlled batches.** Use risk-sampled independent review; before any fan-out, configure and live-test denies for expensive referees.
+**Large-scale: controlled fan-out.** Use disk queues, two reviewers per unit, tiebreakers, approved model tiers, serialized shared resources, and live deny-guardrail receipts as a gate prerequisite; add real process/container isolation when containment is required.

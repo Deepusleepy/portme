@@ -1,6 +1,6 @@
 # Port status
 - Mode: Standard
-- Active phase: 6 — Cut over / done
+- Active phase: 6. Cut over / done
 - Phase state: complete
 - Gate log:
   - sizing | 2026-07-23 | approver=harness preauthorization (local disposable dogfood; objective-condition gate, NOT quoted user approval)
@@ -21,7 +21,7 @@
   U-001 `run_port && compare && byte_fidelity`, U-002 `mutation_test`. Authorized under the
   preauthorized objective condition; a manifest/check-control byte or glob change reopens Phase 1.
 - Baseline command authorization: not-applicable (no build/typecheck baseline; observed-only UI port, stdlib run)
-- Next concrete action: none — port complete and verified; disposable target, no rollout.
+- Next concrete action: none, port complete and verified; disposable target, no rollout.
 - Artifact index:
   - port engine → src/pocket_tasks.py
   - contract → .port/contract.md ; behavior map → .port/behavior-map.tsv
@@ -36,7 +36,7 @@
   - raw evidence: quarantine was created OUTSIDE the repo and DELETED (see receipts/capture-001.md)
 - Blockers: none
 
-## Phase 0–6 — summary
+## Phase 0–6: summary
 - Queue: 2/2 units present, 2/2 verified, 0 pending/blocked/failed-check
 - Judge: 18/18 scenarios PASS (differential vs admitted redacted source goldens)
 - Mutation sensitivity: 6/6 classes caught; source file hash unchanged

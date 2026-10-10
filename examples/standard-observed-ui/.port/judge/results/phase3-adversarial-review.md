@@ -1,4 +1,4 @@
-# Adversarial review — Pocket Tasks port
+# Adversarial review: Pocket Tasks port
 
 Reviewer stance: assume the port is wrong; every finding cites a source
 observation. Method: `run_port` vs live source differential over 19 tricky
@@ -11,8 +11,8 @@ normalization probes against the source.
   Port modeled add as `(text or "").strip()`. Source actually applies
   `" ".join(str(action.get("text","")).split())`:
   - internal whitespace runs (spaces, tabs, newlines) collapse to a single
-    space — `"a\t b   c"` → `"a b c"`; port previously kept `"a\t b   c"`.
-  - non-string values are stringified — `None`→`"None"`, `12345`→`"12345"`,
+    space, `"a\t b   c"` → `"a b c"`; port previously kept `"a\t b   c"`.
+  - non-string values are stringified, `None`→`"None"`, `12345`→`"12345"`,
     `[1,2]`→`"[1, 2]"`, `{"k":1}`→`"{'k': 1}"`; port previously either dropped
     them ("Task cannot be empty") or crashed (`int.strip`/`.strip` AttributeError
     → 400).
@@ -22,7 +22,7 @@ normalization probes against the source.
 - **F-2 JSON encoding (severity: medium, contract B-013).**
   Port emitted `ensure_ascii=True` (default), escaping non-ASCII to `\uXXXX`.
   Source emits raw UTF-8 bytes (`café` → `caf\xc3\xa9`). Structurally identical
-  after JSON parse, so the structural judge did not catch it — a real
+  after JSON parse, so the structural judge did not catch it, a real
   byte-fidelity gap. Fix: `json.dumps(..., ensure_ascii=False)`. Guarded by
   `byte_fidelity.py` (a byte-level check the structural judge cannot see).
 

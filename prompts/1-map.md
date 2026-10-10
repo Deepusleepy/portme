@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/mapping.md. -->
-# Phase 1 — Map and rules
+# Phase 1: Map and rules
 
 **Prerequisites.** Phase 0 approval matched to the actual conversation plus validated artifacts; status gate log is evidence only.
 **Inputs.** Contract, judge scenarios, source evidence, target conventions, `templates/behavior-map.tsv`, `templates/gaps.tsv`, `templates/rulebook.md`, `templates/manifest.tsv`.

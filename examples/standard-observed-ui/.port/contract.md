@@ -1,11 +1,11 @@
-# Port contract — Pocket Tasks (observed-only UI behavior)
+# Port contract: Pocket Tasks (observed-only UI behavior)
 
 ## Identification
 - Source: "Pocket Tasks" to-do UI, observed only over HTTP at `http://127.0.0.1:18765`.
   Health identity `{"ok": true, "version": "ui-observed-1"}`. Observation date 2026-07-23.
   Run/observation method: `GET /health`, `POST /interact` with JSON bodies, isolated
-  session IDs. Internals (processes, files, source, modules) were never inspected —
-  genuinely observed-only.
+  session IDs. Internals (processes, files, source, modules) were never inspected.
+  Genuinely observed-only.
 - Target: this self-contained Python-stdlib example (`.`), engine
   `src/pocket_tasks.py`, own public surface `GET /health` + `POST /interact`
   (default `PT_PORT=18770`). Delivery form: runnable stdlib HTTP server, zero deps.
@@ -39,7 +39,7 @@
 ## Observable surfaces
 | ID | Surface | Input/action | Outputs and side effects | Standard | Comparator/invariant |
 |---|---|---|---|---|---|
-| S-000 | GET /health | — | 200 `{ok, version}` | normalized | version masked to `<version>` (source-identity) |
+| S-000 | GET /health | none | 200 `{ok, version}` | normalized | version masked to `<version>` (source-identity) |
 | S-001 | POST /interact add | `{type:add,text}` | trim; empty→"Task cannot be empty"; append; live "Added X"; focus new-item; export/count update | exact | full-envelope structural diff |
 | S-002 | POST /interact toggle | `{type:toggle,index}` | flip done; aria "Mark X done/active"; count=active; live "X completed/active"; focus task-N; not-found→"Task not found" keep focus | exact | structural diff |
 | S-003 | POST /interact delete | `{type:delete,index}` | remove row; live "Deleted X"; focus task-N; not-found→"Task not found" keep focus | exact | structural diff |
@@ -69,10 +69,10 @@
 | B-007 | focus set only by add(new-item), toggle/delete(task-N), filter(filter-V), Escape/reset(new-item); other actions keep prior focus | same | none |
 | B-008 | Alt+D toggles theme; Escape resets filter+focus but not theme; unknown shortcut/filter → live "" no change | same | none |
 | B-009 | unknown/missing action type → live "Unknown action", no change | same | none |
-| B-010 | error surface: 400 with `{"error": "<ExceptionClassName>"}` (ValueError/AttributeError/JSONDecodeError) | reproduced for parity | none — flagged as hardening candidate D-CAND-1 (see gaps.tsv), not diverged |
+| B-010 | error surface: 400 with `{"error": "<ExceptionClassName>"}` (ValueError/AttributeError/JSONDecodeError) | reproduced for parity | none, flagged as hardening candidate D-CAND-1 (see gaps.tsv), not diverged |
 | B-011 | missing `session` key accepted → shared default bucket | same | none |
 | B-012 | /health version string differs by build | port ships own version `pocket-tasks-port-1` | D-001 (normalized) |
-| B-013 | add normalizes text as `" ".join(str(text or "").split())`: any value stringified, all whitespace runs collapsed to single spaces, ends trimmed; response is raw UTF-8 (ensure_ascii=False) | same | none — was a defect (initially modeled as `.strip()` + default ascii escaping), found in adversarial review, fixed; guarded by J-017 + byte_fidelity.py |
+| B-013 | add normalizes text as `" ".join(str(text or "").split())`: any value stringified, all whitespace runs collapsed to single spaces, ends trimmed; response is raw UTF-8 (ensure_ascii=False) | same | none, was a defect (initially modeled as `.strip()` + default ascii escaping), found in adversarial review, fixed; guarded by J-017 + byte_fidelity.py |
 
 ## Done criteria
 - Differential judge J-001..J-017 + J-PII PASS against admitted redacted source goldens (18/18).

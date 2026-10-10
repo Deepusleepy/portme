@@ -1,4 +1,4 @@
-# Rulebook — Pocket Tasks port
+# Rulebook: Pocket Tasks port
 
 Decisions any two implementers could make differently, decided once. Cite by ID;
 do not edit inside loops.
@@ -35,5 +35,5 @@ do not edit inside loops.
 - **R-011 Session key.** `body.get("session")` is the store key; may be `None` (missing field)
   which selects a shared default bucket, matching the observed source.
 - **R-012 No branding/assets.** Reproduce only functional strings observed via the API
-  ("Pocket Tasks", live-region messages). No logos, styling, or trade dress — none were
+  ("Pocket Tasks", live-region messages). No logos, styling, or trade dress, none were
   observed and none are in scope (functional-replication fast path).

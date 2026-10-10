@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/stress-test.md. -->
-# Phase 2 — Stress-test rules
+# Phase 2: Stress-test rules
 
 **Prerequisites.** Phase 1 approval matched to the actual conversation; frozen manifest/check-input authorization bundle digest, exact checks, and check-input declarations explicitly authorized; approved model plan and triggered rulebook.
 **Inputs.** Risk-ranked manifest, contract rows, applicable map/gaps/rules, judge, production packet, cost log, `templates/cost-log.tsv`.

@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/loops.md. -->
-# Phase 3 — Port everything
+# Phase 3: Port everything
 
 **Prerequisites.** Phase 2 approval matched to the actual conversation; approved amendments/batch plan; current manifest/check-input authorization bundle digest, command, and declaration authorization; live per-referee-class accidental-invocation guardrail receipts before fan-out.
 **Inputs.** Frozen/amended manifest plus approved authorization-bundle SHA-256, contract, map, rules, gaps, unit packets, judge slices, approved model plan, status header.

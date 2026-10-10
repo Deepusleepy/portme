@@ -68,7 +68,7 @@ Human acceptance cannot silently upgrade a bounded claim to full parity.
 ## Validate both directions
 
 For **Standard** and **Large-scale**, name and run the judge plus applicable source baseline suite in Phase 0. Freeze their cases, commands, fixtures, and allowed bounded pre-existing failures at that gate; they cannot be narrowed after a failure. Enumerated pre-existing failures require user approval.
-Deliberately break one behavior per comparator class and require the judge to fail. Apply every mutation in a disposable copy, worktree, or filesystem snapshot created from pinned inputs—never in a dirty source or target workspace. Record pre-mutation source and target diff/hash state, discard the disposable area afterward, then mechanically verify the original source and target diff/hash state is unchanged. Restoration by memory or an unverified reverse edit is not evidence.
+Deliberately break one behavior per comparator class and require the judge to fail. Apply every mutation in a disposable copy, worktree, or filesystem snapshot created from pinned inputs, never in a dirty source or target workspace. Record pre-mutation source and target diff/hash state, discard the disposable area afterward, then mechanically verify the original source and target diff/hash state is unchanged. Restoration by memory or an unverified reverse edit is not evidence.
 Record mutation ID, disposable location/snapshot identity, broken behavior, expected caught cases, actual caught cases, disposal result, and before/after source and target diff/hash receipts.
 
 Useful mutations include changed values, removed or reordered items, altered error semantics, suppressed side effects, exceeded budgets, broken focus or accessible names, and normalization inputs that preserve meaning. A reviewer chooses mutations; when no separate reviewer is proportionate, require at least one mutation for every high-risk contract surface rather than letting the judge author select the easiest cases.
@@ -89,8 +89,8 @@ For an **exact** surface whose contracted behavior includes raw bytes, parsed or
 structural comparison is only one layer. Also retain and compare raw bytes or a
 cryptographic digest across encoding, whitespace, ordering, line endings, and
 protocol/file framing. Phase-0 sensitivity testing must include a byte-only
-mutation when such a surface exists—for example, escaped UTF-8, changed newline,
-or equivalent JSON with different key/space bytes—and the raw-byte referee must
+mutation when such a surface exists, for example, escaped UTF-8, changed newline,
+or equivalent JSON with different key/space bytes, and the raw-byte referee must
 catch it. Do not add byte checks to normalized or invariant surfaces unless the
 contract makes bytes observable.
 
@@ -109,6 +109,6 @@ In **Quick**, record the evidence and continue through later phases without stop
 
 ## By mode
 
-**Quick — acceptance-checklist judge.** The checklist is approved at the plan gate and executed at the result gate. No mandatory two-way mutation validation and no intermediate Phase 0 stop.
-**Standard — automated high-risk coverage.** Require mutation-validated automation where feasible; a documented human-acceptance rung may cover a surface that cannot meet that bar.
-**Large-scale — shardable independent judge.** Require machine-readable results, separate judge review, mutation validation, and a serialized runner when the referee is expensive.
+**Quick: acceptance-checklist judge.** The checklist is approved at the plan gate and executed at the result gate. No mandatory two-way mutation validation and no intermediate Phase 0 stop.
+**Standard: automated high-risk coverage.** Require mutation-validated automation where feasible; a documented human-acceptance rung may cover a surface that cannot meet that bar.
+**Large-scale: shardable independent judge.** Require machine-readable results, separate judge review, mutation validation, and a serialized runner when the referee is expensive.

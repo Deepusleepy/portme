@@ -113,6 +113,6 @@ In Quick, the result gate is always pre-cutover. A rollout the plan gate preappr
 
 ## By mode
 
-**Quick — low-risk reversible cutover.** The result gate always precedes cutover. Use a direct swap only when that exact action was approved at the plan gate and immediate rollback exists; execute it after result acceptance, hold status at `rollout-active`, and move to `done` only after the complete receipt, with no extra Phase 6 stop.
-**Standard — controlled exposure.** Prefer a feature flag or limited stage with a concise marker, drift, and rollback ledger.
-**Large-scale — formal transition.** Require shadow or staged rollout where feasible, tested rollback, drift ownership, complete divergence sign-off, and verified retirement.
+**Quick: low-risk reversible cutover.** The result gate always precedes cutover. Use a direct swap only when that exact action was approved at the plan gate and immediate rollback exists; execute it after result acceptance, hold status at `rollout-active`, and move to `done` only after the complete receipt, with no extra Phase 6 stop.
+**Standard: controlled exposure.** Prefer a feature flag or limited stage with a concise marker, drift, and rollback ledger.
+**Large-scale: formal transition.** Require shadow or staged rollout where feasible, tested rollback, drift ownership, complete divergence sign-off, and verified retirement.
