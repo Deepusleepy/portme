@@ -3,7 +3,7 @@
 
 ## Approved rules
 
-### R-001 — <short decision>
+### R-001: <short decision>
 - Source pattern/condition: <pattern>
 - Required target action: <action>
 - Named exceptions: <none or list>
@@ -15,7 +15,7 @@
 <!-- For language ports, a rulebook silent on any applicable row below is incomplete. Delete for other port types. -->
 - Target ecosystem adoption and banned alternatives: <libs/idioms in; alternatives out>
 - Canonical construct mappings: <source construct → target construct>
-- Errors: <exceptions/panics/sentinels/partial results; distinguish allocation-failure guards from precondition guards — they translate differently>
+- Errors: <exceptions/panics/sentinels/partial results; distinguish allocation-failure guards from precondition guards, they translate differently>
 - Standard-library semantic traps: <source stdlib calls whose target namesake differs (locale-dependent character classes, integer division, sort stability, regex dialects); decide each once>
 - Memory, ownership, and concurrency: <policy>
 - Numeric, text/encoding, time, and serialization semantics: <policy>
@@ -25,7 +25,7 @@
 
 ## Pending amendments
 
-### RA-001 — <proposed change>
+### RA-001: <proposed change>
 - Trigger/fingerprint: <rule ID + symptom class>
 - Evidence: <exact tests/behaviors/edits>
 - Affected units: <IDs>

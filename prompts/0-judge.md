@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/contract.md and references/judge.md. -->
-# Phase 0 — Judge first
+# Phase 0: Judge first
 
 **Prerequisites.** Confirmed scope and sizing/model approvals matched to actual conversation messages; canonical `.port/status.md` header treated as evidence only.
 **Inputs.** Source revision/fixtures, target integration point, environment, sizing evidence, `templates/contract.md`, `templates/judge-scenarios.tsv`.

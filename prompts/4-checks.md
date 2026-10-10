@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/verification.md. -->
-# Phase 4 — Mechanical checks
+# Phase 4: Mechanical checks
 
 **Prerequisites.** Phase 3 approval matched to the actual conversation; stable target batch; manifest/check-input authorization bundle digest, command/declaration authorization, and referee guardrail receipts current.
 **Inputs.** Target output, referee stack, tool versions, manifest ownership, rules/gaps, serialized-runner path.

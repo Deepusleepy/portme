@@ -3,7 +3,7 @@
 ## Identification
 - Source: `source/legacy_adapter.py` (readable, pinned by
   sha256 recorded in status.md; run method `python3 source/legacy_adapter.py <argv>`).
-- Target: `.` — zero-dependency Python 3 package
+- Target: `.`: zero-dependency Python 3 package
   (`src/{config,translate,execute,cli}.py`); CLI entry `python3 src/cli.py`.
 - Environment: macOS, CPython 3.14, POSIX locale; only env var consulted is
   `PORTME_TIMEOUT_MS`. Credential class: none. No network, no filesystem writes

@@ -12,7 +12,7 @@
 - Artifact index: <artifact → path, including raw evidence>
 - Blockers: <none or IDs with reasons>
 
-## Phase <n> — <name>
+## Phase <n>: <name>
 - Queue: <total/done/pending/blocked/failed-check>
 - Referees: <counts and raw output paths>
 - Findings/skips/exceptions: <counts and IDs>

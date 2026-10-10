@@ -6,7 +6,7 @@
 - Environment: macOS (darwin), Node v24.18.0, npm 11.18.0. Locale C/UTF-8. Behavior-affecting inputs: `$NOTES_FILE` (path to notes store) and `$HOME` (for default-path `~` expansion). No feature flags, no credentials, no network.
 
 ## Boundary
-- In: the `notes` CLI public surface — subcommands `add`, `list`, `search`, `remove`; help/usage/error text; exit codes; did-you-mean suggestion on mistyped subcommand; the plain-text notes-file read/write format; `$NOTES_FILE`/`~/.notes.txt` resolution. Enumerated as surfaces S1–S15 below.
+- In: the `notes` CLI public surface, subcommands `add`, `list`, `search`, `remove`; help/usage/error text; exit codes; did-you-mean suggestion on mistyped subcommand; the plain-text notes-file read/write format; `$NOTES_FILE`/`~/.notes.txt` resolution. Enumerated as surfaces S1–S15 below.
 - Out: Python packaging/entry-point metadata (`pyproject.toml`), `__pycache__`, the `notes_cli` import structure itself; concurrency/file-locking (source has none); perfect Unicode case-folding parity between Python `str.lower()` and JS `String.toLowerCase()` beyond ASCII (see D-001).
 - Retained/replaced dependencies: source uses only the Python stdlib (`argparse`, `difflib`, `re`, `ast`, `os`). Port replaces these with hand-written TypeScript (argparse-compatible parser + `difflib.getCloseMatches` port + Node `fs`/`os`/`process`). No third-party runtime dependency retained or added.
 
@@ -17,12 +17,12 @@ Equivalence standard is **exact** (byte-identical stdout, stderr, exit code, and
 |---|---|---|---|---|---|
 | S1 | `add <text>` | one positional | stdout `Added note <N>.\n` where N = new count; append text as a line; exit 0 | exact | diff stdout+file+exit |
 | S2 | `list` | none | `<i>. <note>\n` per note, 1-based, in file order; empty store → no output; exit 0 | exact | diff stdout+exit |
-| S3a | `search <term>` — ASCII term/notes | one positional | for each note whose lowercased text contains lowercased term: `<i>. <note>\n` with note's **original** 1-based index; exit 0 | exact | diff stdout+exit |
-| S3b | `search <term>` — non-ASCII case-folding sub-behavior | one positional with code points where `str.lower()` ≠ `toLowerCase()` | match set may differ from source | intentionally-divergent (D-001) | out of exercised surface; see accepted-divergences.tsv |
+| S3a | `search <term>`: ASCII term/notes | one positional | for each note whose lowercased text contains lowercased term: `<i>. <note>\n` with note's **original** 1-based index; exit 0 | exact | diff stdout+exit |
+| S3b | `search <term>`: non-ASCII case-folding sub-behavior | one positional with code points where `str.lower()` ≠ `toLowerCase()` | match set may differ from source | intentionally-divergent (D-001) | out of exercised surface; see accepted-divergences.tsv |
 | S4 | `remove <n>` (in range) | int positional | stdout `Removed: <text>\n`; note n removed; whole file rewritten; exit 0 | exact | diff stdout+file+exit |
 | S5 | `remove <n>` (out of range: n<1, n>len, empty store) | int positional | stderr `error: no note number <n>\n`; file unchanged; exit 1 | exact | diff stderr+file+exit |
-| S6a | `remove <v>` — ASCII int / non-int | int positional | valid ASCII int (incl. sign, underscores, arbitrary precision) parses; otherwise stderr `usage: notes remove [-h] number\nnotes remove: error: argument number: invalid int value: '<v>'\n`; exit 2 | exact | diff stderr+exit |
-| S6b | `remove <v>` — Unicode Nd digit sub-behavior | positional with Unicode decimal digits (e.g. `٣`) | source parses via CPython int() (accepts); port rejects with the invalid-int error (fails safe) | intentionally-divergent (D-002) | out of exercised surface; see accepted-divergences.tsv |
+| S6a | `remove <v>`: ASCII int / non-int | int positional | valid ASCII int (incl. sign, underscores, arbitrary precision) parses; otherwise stderr `usage: notes remove [-h] number\nnotes remove: error: argument number: invalid int value: '<v>'\n`; exit 2 | exact | diff stderr+exit |
+| S6b | `remove <v>`: Unicode Nd digit sub-behavior | positional with Unicode decimal digits (e.g. `٣`) | source parses via CPython int() (accepts); port rejects with the invalid-int error (fails safe) | intentionally-divergent (D-002) | out of exercised surface; see accepted-divergences.tsv |
 | S7 | no args | (empty argv) | top-level help to **stdout**; exit 0 | exact | diff stdout+exit |
 | S8 | help flags | `-h`, `--help`, `add -h`, `list -h`, `search -h`, `remove -h` | corresponding help to stdout; exit 0 | exact | diff stdout+exit |
 | S9 | mistyped sub, 1 close match | `lst` | stderr top-level usage + `notes: error: argument command: invalid choice: 'lst' (choose from 'add', 'list', 'search', 'remove'). Did you mean 'list'?\n`; exit 2 | exact | diff stderr+exit |

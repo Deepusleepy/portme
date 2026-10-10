@@ -2,7 +2,7 @@
 
 ## Approved rules
 
-### R-001 — Config defaults are frozen
+### R-001: Config defaults are frozen
 - Source pattern/condition: DEFAULTS = timeout_ms=1000, retries=2, region=us-east, strict=True
 - Required target action: reproduce exactly; ALLOWED = set(DEFAULTS)
 - Named exceptions: none
@@ -10,7 +10,7 @@
 - Positive example: load_config(None,env={}) -> those four values
 - Negative example: emitting only three keys or a different timeout is wrong
 
-### R-002 — Config precedence is defaults < file < PORTME_TIMEOUT_MS < CLI
+### R-002: Config precedence is defaults < file < PORTME_TIMEOUT_MS < CLI
 - Source pattern/condition: file update, then env override, then CLI-if-not-None
 - Required target action: apply in that exact order; env applies whenever present; CLI value applied only when the arg is not None
 - Named exceptions: only timeout_ms has an env layer; retries/region have file+CLI only
@@ -18,7 +18,7 @@
 - Positive example: config=100, env=250, --timeout-ms 999 -> 999
 - Negative example: letting env override an explicit CLI value
 
-### R-003 — `strict` is accepted but inert
+### R-003: `strict` is accepted but inert
 - Source pattern/condition: strict in DEFAULTS/ALLOWED, never read after load
 - Required target action: validate as a known key, store it, never branch on it
 - Named exceptions: none
@@ -26,7 +26,7 @@
 - Positive example: {"strict":false} loads without error, changes nothing
 - Negative example: rejecting strict as unknown, or wiring new behavior on it
 
-### R-004 — Request must contain exactly {user_id, payload}
+### R-004: Request must contain exactly {user_id, payload}
 - Source pattern/condition: sorted(req) != ["payload","user_id"]
 - Required target action: raise ValueError("request must contain only user_id and payload")
 - Named exceptions: none
@@ -34,7 +34,7 @@
 - Positive example: {"user_id":"u","payload":1} ok
 - Negative example: allowing an extra key or a missing key
 
-### R-005 — user_id str/int check reproduces bool acceptance
+### R-005: user_id str/int check reproduces bool acceptance
 - Source pattern/condition: isinstance(req["user_id"], (str,int))
 - Required target action: same check; do NOT special-case bool out (int subtype); str() it
 - Named exceptions: none
@@ -42,7 +42,7 @@
 - Positive example: user_id True -> subject.id "True"
 - Negative example: rejecting bool, or excluding it via `type(x) is int`
 
-### R-006 — Status sequence parsing
+### R-006: Status sequence parsing
 - Source pattern/condition: [int(x) for x in sequence.split(",") if x]
 - Required target action: reproduce; empty tokens skipped; empty seq -> default 200; non-numeric int() raises ValueError (caught at CLI -> exit 2)
 - Named exceptions: none
@@ -50,7 +50,7 @@
 - Positive example: "503,,200" -> [503,200]
 - Negative example: defaulting junk to 0 or 200 instead of raising
 
-### R-007 — Only 503 is retryable, bounded by maxAttempts
+### R-007: Only 503 is retryable, bounded by maxAttempts
 - Source pattern/condition: retry loop breaks when status!=503 OR attempts>=maxAttempts
 - Required target action: reproduce exactly (>=, not >); ok=200<=s<300; error=null if s<400 else temporary(503)/upstream
 - Named exceptions: none
@@ -58,7 +58,7 @@
 - Positive example: retries=2 -> maxAttempts=3 -> 503 seq gives attempts=3
 - Negative example: retrying 500, or off-by-one on the attempt bound
 
-### R-008 — Error catch set and exit codes
+### R-008: Error catch set and exit codes
 - Source pattern/condition: except (ValueError, OSError, json.JSONDecodeError)
 - Required target action: catch exactly those three; print "error: "+str(exc) to stderr; return 2. argparse failures keep their own SystemExit(2).
 - Named exceptions: none
@@ -66,7 +66,7 @@
 - Positive example: missing --request -> argparse usage on stderr, exit 2
 - Negative example: catching KeyError/TypeError, or exiting 1
 
-### R-009 — Canonical JSON output
+### R-009: Canonical JSON output
 - Source pattern/condition: json.dumps(out, sort_keys=True, separators=(",",":"))
 - Required target action: identical serialization; trailing newline from print()
 - Named exceptions: none

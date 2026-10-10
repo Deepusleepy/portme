@@ -1,4 +1,4 @@
-# Differential judge — legacy_adapter port
+# Differential judge: legacy_adapter port
 
 ## Run
     python3 .port/judge/compare.py --mode source   # capture source baseline only

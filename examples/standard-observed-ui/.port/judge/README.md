@@ -1,4 +1,4 @@
-# Judge — Pocket Tasks observed-only differential harness
+# Judge: Pocket Tasks observed-only differential harness
 
 ## Oracle rungs (per references/judge.md)
 - **Rung 6 (source-backed golden scenarios)** for behavior: raw source observations captured
@@ -9,23 +9,23 @@
   public surface with the identical logical action sequences.
 
 ## Files
-- `_scenarios.py`  — single source of truth for scenario action sequences (17 scenarios).
-- `_driver.py`     — HTTP driver over GET /health + POST /interact; `normalize()` =
+- `_scenarios.py`: single source of truth for scenario action sequences (17 scenarios).
+- `_driver.py`: HTTP driver over GET /health + POST /interact; `normalize()` =
   pocketscan redaction of all string leaves + mask of `health.version`.
-- `run_source.py`  — ONLY authorized source driver; writes RAW observations to a caller dir
+- `run_source.py`: ONLY authorized source driver; writes RAW observations to a caller dir
   (must be the outside-repo quarantine). Never writes to `.port/` directly.
-- `capture.py`     — full capture pipeline: quarantine(0700, outside repo, non-symlink) →
+- `capture.py`: full capture pipeline: quarantine(0700, outside repo, non-symlink) →
   raw capture → inventory (reject symlink/non-regular) → pocketscan scan (receipt) →
   redact + clean rescan → copy-not-link admission into `fixtures/<id>/observation.json` →
   admitted-copy verification → quarantine deletion + path-absent check → `receipts/capture-001.md`.
-- `run_port.py`    — drives the port (ephemeral loopback instance), normalizes, writes
+- `run_port.py`: drives the port (ephemeral loopback instance), normalizes, writes
   `results/port-obs/<id>.json`.
-- `compare.py`     — structural diff of normalized golden vs normalized port; per-scenario
+- `compare.py`: structural diff of normalized golden vs normalized port; per-scenario
   PASS/FAIL + summary failure queue. Exit 0 iff all pass.
-- `mutation_test.py`— two-way sensitivity: 6 mutation classes on disposable source copies;
+- `mutation_test.py`,  two-way sensitivity: 6 mutation classes on disposable source copies;
   judge must FAIL each; records source-file hash unchanged.
-- `fixtures/<id>/observation.json` — admitted REDACTED source goldens (the oracle).
-- `results/` — port observations + phase evidence.
+- `fixtures/<id>/observation.json`: admitted REDACTED source goldens (the oracle).
+- `results/`: port observations + phase evidence.
 
 ## Run
 ```
@@ -46,8 +46,8 @@ python3 .port/judge/capture.py http://127.0.0.1:18765
 
 ## Normalization justification
 Only two normalizations, each contract-cited:
-1. `pocketscan` redaction of every string leaf — privacy-preserving judge; applied
+1. `pocketscan` redaction of every string leaf, privacy-preserving judge; applied
    symmetrically so no secret/PII sits in `.port/` and the J-PII scenario compares equal.
    Idempotent on already-redacted goldens.
-2. `health.version` masked (contract S-000 / divergence D-001) — source-identity field.
+2. `health.version` masked (contract S-000 / divergence D-001): source-identity field.
 Array order is preserved (task order is contractual). No other field is normalized.

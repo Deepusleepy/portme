@@ -1,4 +1,4 @@
-## Capture receipt — 001
+## Capture receipt: 001
 - Generated: 2026-07-23T05:01:17Z
 - Authorization: preauthorized local dogfood matrix (see status.md); account/environment: assistant-owned local fixture at http://127.0.0.1:18765
 - Quarantine: REDACTED-LOCAL-FIXTURE/pocketcap-5xao8jki; mode: 0o700; non-symlink: yes; outside-repo: yes

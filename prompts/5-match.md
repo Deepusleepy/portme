@@ -1,5 +1,5 @@
 <!-- Phase kickoff card; methodology lives in references/verification.md. -->
-# Phase 5 — Run and match
+# Phase 5: Run and match
 
 **Prerequisites.** Phase 4 approval matched to the actual conversation (or documented cheap-check dissolution); trusted frozen Phase 0 baseline available.
 **Inputs.** Source and port environments, exact judge fixtures/normalizers, contract, divergences, approved limits, raw check outputs.

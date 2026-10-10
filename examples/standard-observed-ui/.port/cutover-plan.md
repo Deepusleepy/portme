@@ -1,4 +1,4 @@
-# Cutover plan — Pocket Tasks port (Phase 6)
+# Cutover plan: Pocket Tasks port (Phase 6)
 
 ## Marker ledger
 - `grep -REn 'TODO\(port\)|BUG\(port\)|PERF\(port\)|SAFETY\(port\)|FIXME|XXX|HACK'`
@@ -12,8 +12,8 @@
   differential judge before trusting parity.
 
 ## Divergences requiring final sign-off
-- **D-001** (health version normalized) — accepted; comparator masks the field.
-- **D-CAND-1** (error body exposes exception class name) — NOT diverged;
+- **D-001** (health version normalized): accepted; comparator masks the field.
+- **D-CAND-1** (error body exposes exception class name): NOT diverged;
   reproduced for parity and recorded as a productionization hardening note.
   Final sign-off deferred to whoever productionizes the port.
 

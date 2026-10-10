@@ -1,11 +1,11 @@
 # Stress-test the rules
 
 Phase 2 makes the Phase 1 artifacts govern real target work before broad implementation. When the rulebook trigger fired, `.port/rulebook.md` is the primary object under stress; when no rulebook exists, stress the applicable map, gaps, contract, and judge instead, and create a rulebook only if the slice surfaces a recurring decision.
-Use the production unit packets (`.port/packets/<unit_id>.md`, defined in `references/loops.md`), checks, review roles, and model tiers planned for Phase 3 so the exercise exposes actual pipeline defects — write the slice's packets now; Phase 2 is where a packet template's gaps surface cheaply.
+Use the production unit packets (`.port/packets/<unit_id>.md`, defined in `references/loops.md`), checks, review roles, and model tiers planned for Phase 3 so the exercise exposes actual pipeline defects. Write the slice's packets now; Phase 2 is where a packet template's gaps surface cheaply.
 
 ## Decide whether disposal pays
 
-Disposal depends on downstream amortization, not the mode label.
+Disposal depends on how many later units will reuse the slice, not on the mode name.
 
 **Discard the slice** when many untouched units will reuse its rules and conventions. Re-running one pilot after amendments is cheap compared with propagating an unreviewed choice through fan-out.
 **Keep the reviewed output** when the slice is a large fraction of the whole port. In that case, deleting and rebuilding it would cost more than the downstream risk it protects.
@@ -49,7 +49,7 @@ Use a separate tiebreaker and default unsupported disputes to not-confirmed.
 
 Only structure-preserving migrations with line-comparable outputs benefit from a dual-translation bakeoff.
 One translator follows the rulebook; another uses source behavior and target idioms without it.
-The native-idiom translator's workspace contains only the pinned source inputs and target toolchain metadata — no `.port/`, rulebook, inventory, or any mention that a rule-following translation exists; exposure invalidates the baseline. Keep output paths isolated.
+The native-idiom translator's workspace contains only the pinned source inputs and target toolchain metadata: no `.port/`, rulebook, inventory, or any mention that a rule-following translation exists. Exposure invalidates the baseline. Keep output paths isolated.
 A diff inspector classifies material differences as rule-following correct, native-idiom correct, both acceptable, or both wrong.
 Convert repeated or high-risk differences into proposed rules.
 
@@ -74,7 +74,7 @@ List affected future units for each amendment.
 The user approves material rule or contract changes at the Phase 2 gate. A material amendment changes contracted behavior, an equivalence standard, safety or data handling, unit ownership or dependency order, judge coverage or normalization, a shared translation rule, or expected cost or blast radius enough to change the approved plan.
 
 For a kept slice, apply approved amendments to it through the normal fix and review loop before marking it done.
-For a disposable slice, amendments—not implementation—are the reusable output.
+For a disposable slice, amendments, not implementation, are the reusable output.
 
 ## Dispose or retain according to the verdict
 
@@ -94,12 +94,12 @@ Append numeric forecasts and actuals to `.port/cost-log.tsv` now that measured e
 
 ## Present the Phase 2 gate
 
-Report slice share, amortization decision, judge results, mutation status if the judge changed, findings by class, amendments, kept or discarded paths, measured cost, and proposed batch size. Include a checkbox proving the recorded keep/discard verdict was followed and no disposable output can close a manifest row.
+Report slice share, the keep-or-discard decision, judge results, mutation status if the judge changed, findings by class, amendments, kept or discarded paths, measured cost, and proposed batch size. Include a checkbox proving the recorded keep/discard verdict was followed and no disposable output can close a manifest row.
 Standard and Large-scale stop for explicit approval before Phase 3.
 Quick records the evidence and continues without an intermediate gate.
 
 ## By mode
 
-**Quick — stress in place when needed.** If one risky ambiguity warrants Phase 2 work, test the actual unit and keep reviewed output; no Phase 2 stop occurs.
-**Standard — amortization decides.** Keep a slice that is a large share of the port; discard it only when enough downstream units benefit from regeneration.
-**Large-scale — protect fan-out.** A disposable production-topology slice is usually worthwhile, but retention remains valid when the slice dominates the port. Add adversarial review, measurement, and a bakeoff when structure-preserving.
+**Quick: stress in place when needed.** If one risky ambiguity warrants Phase 2 work, test the actual unit and keep reviewed output; no Phase 2 stop occurs.
+**Standard: keep or discard by reuse.** Keep a slice that is a large share of the port; discard it only when enough downstream units benefit from regeneration.
+**Large-scale: protect fan-out.** A disposable production-topology slice is usually worthwhile, but retention remains valid when the slice dominates the port. Add adversarial review, measurement, and a bakeoff when structure-preserving.

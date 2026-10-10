@@ -1,4 +1,4 @@
-# Final verification receipt — Pocket Tasks observed-only port
+# Final verification receipt: Pocket Tasks observed-only port
 
 Date: 2026-07-23. Mode: Standard. Runner: single-session Opus 4.8 (build + review).
 Entry point: `./verify.sh` (offline; no source needed). All green.
@@ -37,8 +37,8 @@ non-sensitive fixtures whose only purpose is to exercise the scan/redact pipelin
 No real credential, token, session, or private data exists anywhere in the target.
 
 ## Defects found and fixed in adversarial review
-- add text normalization (whitespace-collapse + `str()` coercion) — was `.strip()`.
-- JSON output encoding — was ASCII-escaped, now raw UTF-8.
+- add text normalization (whitespace-collapse + `str()` coercion), was `.strip()`.
+- JSON output encoding, was ASCII-escaped, now raw UTF-8.
 Both fixed and regression-guarded (J-017 + `byte_fidelity.py`). Post-fix: 0 divergences
 over a 19-input adversarial probe set. Details: `judge/results/phase3-adversarial-review.md`.
 

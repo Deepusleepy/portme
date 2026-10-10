@@ -55,7 +55,7 @@ gap_id	unit_id	source_site	category	observation	decision_needed	resolution	evide
 G-001	U-001	src/save.*	error	cancel returns no value	map cancellation semantics	return null + warn	R-004,src/save.py:88	R-004	medium	closed
 ```
 
-A gap closes only when `resolution` records the decided target translation with its evidence and owner — implementers look answers up here; a `closed` row with an empty resolution is invalid.
+A gap closes only when `resolution` records the decided target translation with its evidence and owner, implementers look answers up here; a `closed` row with an empty resolution is invalid.
 
 ## Write the rulebook
 
@@ -79,7 +79,7 @@ Keep approved rules read-only during Phase 2 and Phase 3 runs; proposed amendmen
 
 ## Shard Phase 1 fan-out, then merge
 
-**Calibrate before fanning out.** One classifier does a risk-weighted first slice (the first ~20 rows, or one shard) alone; the merge owner and, in Large-scale, a reviewer read it against the schema and rules, settle every convention question it surfaces (ID formats, category boundaries, what counts as a skip), and record a calibration receipt in `.port/status.md`. Only then does broad fan-out start — a misread schema replicates across every shard, and calibration is the cheap place to catch it.
+**Calibrate before fanning out.** One classifier does a risk-weighted first slice (the first ~20 rows, or one shard) alone; the merge owner and, in Large-scale, a reviewer read it against the schema and rules, settle every convention question it surfaces (ID formats, category boundaries, what counts as a skip), and record a calibration receipt in `.port/status.md`. Only then does broad fan-out start, a misread schema replicates across every shard, and calibration is the cheap place to catch it.
 
 Parallel classifiers must not append to one shared `gaps.tsv` or `behavior-map.tsv`.
 Assign disjoint source or behavior scopes and a unique shard path under the applicable `.port/` artifact area.
@@ -107,7 +107,7 @@ negative probe proving broken output fails; existence-only checks are invalid.
 When a leaf module changes a signature or adapter boundary, direct leaf tests
 alone cannot close the row. Declare a dependent integration check or include a
 consumer-path probe that uses the real positional/keyword/envelope shape.
-`unit_check` is a shell command—the manifest is executable input. Its required
+`unit_check` is a shell command. The manifest is executable input. Its required
 `check_inputs` field sits between `gap_ids` and `unit_check` and contains
 comma-separated repository-relative regular control files or safe globs whose
 bytes govern check execution: driver and sourced scripts, configs, lockfiles,
@@ -133,8 +133,8 @@ U-001	src/save.*	app/save/*		S-004	R-002	G-001	package.json,package-lock.json,te
 
 At the Phase 1 gate, run a machine-checkable join from every included contract
 ID to one or more manifest units and back; missing, orphaned, or out-of-scope
-IDs block approval. A candidate manifest-only SHA-256—such as the one printed
-by `manifest_from_depmap.py` beside its placeholders—is evidence, never
+IDs block approval. A candidate manifest-only SHA-256, such as the one printed
+by `manifest_from_depmap.py` beside its placeholders, is evidence, never
 executable authorization. After filling `check_inputs`, use
 `python3 <portme>/scripts/port_queue.py digest` to compute the versioned
 authorization-bundle SHA-256 over exact
@@ -156,7 +156,7 @@ consumer, while the serialized integration referee caught the regression and
 
 ## Audit the triggered artifacts together
 
-Check that every included contract surface appears in the manifest, and — when the behavior-map trigger fired — in the behavior map as well. Check that every changed signature/adapter boundary reaches an actual consumer call shape before the Phase-1 join can pass.
+Check that every included contract surface appears in the manifest, and (when the behavior-map trigger fired) in the behavior map as well. Check that every changed signature/adapter boundary reaches an actual consumer call shape before the Phase-1 join can pass.
 Check that every unknown edge has a gap row, every recurring gap has a rule or pending decision, and every manifest row cites its governing evidence.
 Use different skeptic lenses for completeness, semantic fidelity, security/privacy, and operational ownership when risk warrants them.
 Resolve contradictions before Phase 2; implementers must not arbitrate policy during production.
@@ -169,6 +169,6 @@ In Quick, record any lightweight map decisions and continue without an intermedi
 
 ## By mode
 
-**Quick — no intermediate gate.** Skip standalone artifacts when one localized unit has no shared ambiguity; carry essential decisions in the contract and acceptance checklist.
-**Standard — focused artifacts.** Keep applicable maps, gaps, rules, and manifest rows; any classifier fan-out uses shard-then-merge receipts.
-**Large-scale — mechanical completeness.** Require stable IDs, deterministic graph work where possible, full ownership checks, skeptic review, and reconciled shard receipts for every fan-out merge.
+**Quick: no intermediate gate.** Skip standalone artifacts when one localized unit has no shared ambiguity; carry essential decisions in the contract and acceptance checklist.
+**Standard: focused artifacts.** Keep applicable maps, gaps, rules, and manifest rows; any classifier fan-out uses shard-then-merge receipts.
+**Large-scale: mechanical completeness.** Require stable IDs, deterministic graph work where possible, full ownership checks, skeptic review, and reconciled shard receipts for every fan-out merge.
